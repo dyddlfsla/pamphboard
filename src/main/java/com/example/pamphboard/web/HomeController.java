@@ -11,4 +11,9 @@ public class HomeController {
     return "home";
   }
 
+  @GetMapping("/articles/save")
+  public String saveArticles() {
+    return "articles-save";
+  }
+
 }
