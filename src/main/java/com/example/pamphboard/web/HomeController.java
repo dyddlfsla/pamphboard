@@ -11,9 +11,9 @@ public class HomeController {
     return "home";
   }
 
-  @GetMapping("/articles/save")
+  @GetMapping("/posts/save")
   public String saveArticles() {
-    return "articles-save";
+    return "posts-save";
   }
 
 }
