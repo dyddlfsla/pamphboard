@@ -1,4 +1,4 @@
-package com.example.pamphboard.web;
+package com.example.pamphboard.controller;
 
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.service.PostService;

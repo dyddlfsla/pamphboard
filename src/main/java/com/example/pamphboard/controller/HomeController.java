@@ -1,4 +1,4 @@
-package com.example.pamphboard.web;
+package com.example.pamphboard.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

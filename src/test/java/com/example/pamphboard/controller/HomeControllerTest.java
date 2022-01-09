@@ -1,7 +1,6 @@
-package com.example.pamphboard.web;
+package com.example.pamphboard.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import org.junit.jupiter.api.Test;
