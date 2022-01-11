@@ -30,4 +30,9 @@ public class PostController {
     postService.savePost(postDto);
     return "redirect:/";
   }
+
+  @GetMapping("/posts/list")
+  public String postList() {
+    return "post/postList";
+  }
 }
