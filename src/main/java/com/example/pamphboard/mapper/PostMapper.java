@@ -9,6 +9,6 @@ public interface PostMapper {
 
   @Insert("insert into BOARD_POST(writer, password, title, content) "
         + "values(#{writer}, #{password}, #{title}, #{content})")
-  void savePosts(PostDto postDto);
+  void insertPost(PostDto postDto);
 
 }

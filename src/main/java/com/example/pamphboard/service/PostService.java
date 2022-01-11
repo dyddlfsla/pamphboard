@@ -15,7 +15,7 @@ public class PostService {
     this.postDao = postDao;
   }
 
-  public void savePosts(PostDto postDto) {
-    postDao.savePosts(postDto);
+  public void savePost(PostDto postDto) {
+    postDao.savePost(postDto);
   }
 }

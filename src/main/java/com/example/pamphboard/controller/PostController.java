@@ -26,8 +26,8 @@ public class PostController {
   }
 
   @PostMapping("/posts/save")
-  public String savePosts(@ModelAttribute PostDto postDto) {
-    postService.savePosts(postDto);
+  public String savePost(@ModelAttribute PostDto postDto) {
+    postService.savePost(postDto);
     return "redirect:/";
   }
 }
