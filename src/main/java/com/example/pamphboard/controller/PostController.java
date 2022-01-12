@@ -2,6 +2,7 @@ package com.example.pamphboard.controller;
 
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.service.PostService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,9 @@ public class PostController {
   }
 
   @GetMapping("/posts/list")
-  public String postList() {
+  public String postList(Model model) {
+    List<PostDto> foundPosts = postService.findAll();
+    model.addAttribute("foundPosts", foundPosts);
     return "post/postList";
   }
 }

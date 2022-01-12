@@ -2,6 +2,7 @@ package com.example.pamphboard.dao;
 
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.mapper.PostMapper;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +18,9 @@ public class PostDao {
 
   public void savePost(PostDto postDto) {
     postMapper.insertPost(postDto);
+  }
+
+  public List<PostDto> findAll() {
+    return postMapper.selectAll();
   }
 }

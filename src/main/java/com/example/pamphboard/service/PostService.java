@@ -2,6 +2,7 @@ package com.example.pamphboard.service;
 
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,9 @@ public class PostService {
 
   public void savePost(PostDto postDto) {
     postDao.savePost(postDto);
+  }
+
+  public List<PostDto> findAll() {
+    return postDao.findAll();
   }
 }
