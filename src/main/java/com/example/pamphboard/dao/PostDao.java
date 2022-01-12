@@ -16,8 +16,8 @@ public class PostDao {
     this.postMapper = postMapper;
   }
 
-  public void savePost(PostDto postDto) {
-    postMapper.insertPost(postDto);
+  public void save(PostDto postDto) {
+    postMapper.insert(postDto);
   }
 
   public List<PostDto> findAll() {

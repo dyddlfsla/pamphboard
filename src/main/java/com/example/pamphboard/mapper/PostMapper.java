@@ -11,7 +11,7 @@ public interface PostMapper {
 
   @Insert("INSERT INTO BOARD_POST(writer, password, title, content) "
         + "VALUES(#{writer}, #{password}, #{title}, #{content})")
-  void insertPost(PostDto postDto);
+  void insert(PostDto postDto);
 
   @Select("SELECT * FROM BOARD_POST")
   List<PostDto> selectAll();

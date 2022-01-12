@@ -21,19 +21,19 @@ public class PostController {
   }
 
   @GetMapping("/posts/save")
-  public String savePostsForm(Model model) {
+  public String saveForm(Model model) {
     model.addAttribute("PostDto", new PostDto());
     return "post/savePostForm";
   }
 
   @PostMapping("/posts/save")
-  public String savePost(@ModelAttribute PostDto postDto) {
-    postService.savePost(postDto);
+  public String save(@ModelAttribute PostDto postDto) {
+    postService.save(postDto);
     return "redirect:/";
   }
 
   @GetMapping("/posts/list")
-  public String postList(Model model) {
+  public String list(Model model) {
     List<PostDto> foundPosts = postService.findAll();
     model.addAttribute("foundPosts", foundPosts);
     return "post/postList";

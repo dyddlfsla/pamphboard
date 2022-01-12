@@ -16,8 +16,8 @@ public class PostService {
     this.postDao = postDao;
   }
 
-  public void savePost(PostDto postDto) {
-    postDao.savePost(postDto);
+  public void save(PostDto postDto) {
+    postDao.save(postDto);
   }
 
   public List<PostDto> findAll() {
