@@ -23,7 +23,7 @@ public class PostController {
   @GetMapping("/posts/save")
   public String saveForm(Model model) {
     model.addAttribute("PostDto", new PostDto());
-    return "post/savePostForm";
+    return "post/saveForm";
   }
 
   @PostMapping("/posts/save")
@@ -36,6 +36,6 @@ public class PostController {
   public String list(Model model) {
     List<PostDto> foundPosts = postService.findAll();
     model.addAttribute("foundPosts", foundPosts);
-    return "post/postList";
+    return "post/list";
   }
 }
