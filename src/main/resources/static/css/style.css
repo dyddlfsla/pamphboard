@@ -11,10 +11,46 @@ ul, ol {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
 img {
   vertical-align: top;
 
+}
+
+#header {
+  background-color: antiquewhite;
+}
+
+#header .header_inner {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+  height: 100px;
+}
+
+#header .logo {
+  float: left;
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+}
+
+#nav_item {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  height: 80px;
+  text-align: center;
+}
+
+#nav_item > ul > li {
+  font-weight: 600;
+  font-family: Arial;
+  font-size: 2em;
+  display: inline-block;
+  position:relative;
+  margin: 0 6px;
 }
