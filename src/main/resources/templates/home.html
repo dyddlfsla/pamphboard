@@ -1,16 +1,43 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
   <title>pamphBoard</title>
+  <link th:href="@{/../static/css/style.css}" rel="stylesheet">
 </head>
 <body>
-<h1>PamphBoard</h1>
-<div>
-  <div>
-    <a href="/posts/save"> 게시글 등록</a>
-    <a href="/posts/list"> 게시글 목록</a>
-  </div>
+<div class="wrapper">
+  <header id="header">
+    <div class="header_inner">
+      <div class="logo">
+      </div>
+      <div class="menu">
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <div class="table">
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer_inner">
+      <div class="copyright">
+        <p>PamphBoard All right reserved.</p>
+      </div>
+      <div class="footer_right">
+        <div class="tistory">
+          <ul>
+            <li><a href="#">Eleventh Universe</a></li>
+          </ul>
+        </div>
+        <div class="family_site">
+          <select>
+            <option selected>없음</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 </body>
 </html>
