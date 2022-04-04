@@ -1,56 +1,37 @@
-@charset "UTF-8";
 
-/* Reset CSS*/
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+body {
   margin: 0;
-  padding: 0;
-}
-
-ul, ol {
-  list-style: none;
 }
 
 a {
-  color: black;
   text-decoration: none;
+  color: white;
 }
 
-img {
-  vertical-align: top;
-
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7F1F45;
+  padding: 8px 12px;
 }
 
-#header {
-  background-color: antiquewhite;
+.navbar_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
 }
 
-#header .header_inner {
-  position: relative;
-  margin: 0 auto;
-  width: 1200px;
-  height: 100px;
+.navbar_menu li {
+  padding: 8px 12px;
 }
 
-#header .logo {
-  float: left;
-  margin-top: 30px;
-  width: 200px;
-  height: 40px;
+.navbar_link_icons {
+  list-style: none;
+  color: white;
+  display: flex;
 }
 
-#nav_item {
-  position: absolute;
-  right: 0;
-  top: 20px;
-  height: 80px;
-  text-align: center;
-}
-
-#nav_item > ul > li {
-  font-weight: 600;
-  font-family: Arial;
-  font-size: 2em;
-  display: inline-block;
-  position:relative;
-  margin: 0 6px;
+.navbar_link_icons li {
+  padding: 8px 12px;
 }

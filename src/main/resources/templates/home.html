@@ -6,44 +6,18 @@
   <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
-<div class="wrapper">
-  <header id="header">
-    <div class="header_inner">
-      <div class="logo">
-      </div>
-      <div class="menu">
-        <nav id="nav_item">
-          <ul>
-            <li><a th:href="@{#}">Home</a></li>
-            <li><a th:href="@{#}">Board</a></li>
-          </ul>
-        </nav>
-      </div>
+  <nav th:class="navbar">
+    <div th:class="navbar_logo">
+      <a th:href="@{#}">pamphBoard</a>
     </div>
-  </header>
-  <section id="content">
-    <div class="table">
-    </div>
-  </section>
-  <footer id="footer">
-    <div class="footer_inner">
-      <div class="copyright">
-        <p>PamphBoard All right reserved.</p>
-      </div>
-      <div class="footer_right">
-        <div class="tistory">
-          <ul>
-            <li><a href="#">Eleventh Universe</a></li>
-          </ul>
-        </div>
-        <div class="family_site">
-          <select>
-            <option selected>없음</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
+    <ul th:class="navbar_menu">
+      <li><a th:href="@{#}">Home</a></li>
+      <li><a th:href="@{#}">Board</a></li>
+    </ul>
+    <ul th:class="navbar_link_icons">
+      <li>facebook</li>
+      <li>twitter</li>
+    </ul>
+  </nav>
 </body>
 </html>
