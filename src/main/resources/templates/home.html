@@ -8,38 +8,40 @@
   <link th:href="@{/css/footer.css}" th:rel="stylesheet">
 </head>
 <body>
-<nav th:class="navbar">
-  <div th:class="navbar_logo">
-    <a th:href="@{#}">
-      <img th:src="@{/images/logos/pamphBoard-logo.png}" th:width="150"/>
-    </a>
-  </div>
-  <ul th:class="navbar_menu">
-    <li>
-      <a th:href="@{#}">Home</a>
-    </li>
-    <li>
-      <a th:href="@{#}">Board</a>
-    </li>
-  </ul>
-  <ul th:class="navbar_link_icons">
-    <li>
+<header>
+  <nav th:class="navbar">
+    <div th:class="navbar_logo">
       <a th:href="@{#}">
-        <i class="fa-brands fa-facebook"></i>
+        <img th:src="@{/images/logos/pamphBoard-logo.png}" th:width="150"/>
       </a>
-    </li>
-    <li>
-      <a th:href="@{#}">
-        <i class="fa-brands fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a th:href="@{https://rosepamphyle42.tistory.com}" th:target="_blank">
-        Tistory
-      </a>
-    </li>
-  </ul>
-</nav>
+    </div>
+    <ul th:class="navbar_menu">
+      <li>
+        <a th:href="@{#}">Home</a>
+      </li>
+      <li>
+        <a th:href="@{#}">Board</a>
+      </li>
+    </ul>
+    <ul th:class="navbar_link_icons">
+      <li>
+        <a th:href="@{#}">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{#}">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{https://rosepamphyle42.tistory.com}" th:target="_blank">
+          Tistory
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <footer th:class="footer">
   <div th:class="footer_right">
     <p>Copyright 2022 pamph91. All right reserved | 7942dyddlfsla@naver.com</p>
