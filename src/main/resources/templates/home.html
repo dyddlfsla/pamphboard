@@ -7,18 +7,30 @@
   <link th:href="@{/css/style.css}" th:rel="stylesheet">
 </head>
 <body>
-  <nav th:class="navbar">
-    <div th:class="navbar_logo">
-      <a th:href="@{#}">pamphBoard</a>
-    </div>
-    <ul th:class="navbar_menu">
-      <li><a th:href="@{#}">Home</a></li>
-      <li><a th:href="@{#}">Board</a></li>
-    </ul>
-    <ul th:class="navbar_link_icons">
-      <li><a th:href="@{#}"><i class="fa-brands fa-facebook"></i></a></li>
-      <li><a th:href="@{#}"><i class="fa-brands fa-twitter"></i></a></li>
-    </ul>
-  </nav>
+<nav th:class="navbar">
+  <div th:class="navbar_logo">
+    <a th:href="@{#}">pamphBoard</a>
+  </div>
+  <ul th:class="navbar_menu">
+    <li>
+      <a th:href="@{#}">Home</a>
+    </li>
+    <li>
+      <a th:href="@{#}">Board</a>
+    </li>
+  </ul>
+  <ul th:class="navbar_link_icons">
+    <li>
+      <a th:href="@{#}">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a th:href="@{#}">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
 </body>
 </html>
