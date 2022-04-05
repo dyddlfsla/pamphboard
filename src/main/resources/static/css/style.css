@@ -25,7 +25,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7F1F45;
+  background-color: var(--color-one);
   padding: 10px 30px;
 }
 
@@ -37,10 +37,12 @@ a {
 
 .navbar_menu li {
   padding: 10px 14px;
+  font-size: 24px;
 }
 
 .navbar_menu li:hover {
-
+  background-color: var(--color-two);
+  border-radius: 4px;
 }
 
 .navbar_link_icons {
