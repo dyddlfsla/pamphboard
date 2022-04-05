@@ -1,6 +1,12 @@
 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/static/assets/googlefonts/fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+
 body {
   margin: 0;
+  font-family: "Source Sans Pro";
 }
 
 a {
@@ -13,7 +19,7 @@ a {
   justify-content: space-between;
   align-items: center;
   background-color: #7F1F45;
-  padding: 8px 12px;
+  padding: 10px 30px;
 }
 
 .navbar_menu {
@@ -23,7 +29,7 @@ a {
 }
 
 .navbar_menu li {
-  padding: 8px 12px;
+  padding: 10px 14px;
 }
 
 .navbar_link_icons {
@@ -33,5 +39,5 @@ a {
 }
 
 .navbar_link_icons li {
-  padding: 8px 12px;
+  padding: 10px 14px;
 }
