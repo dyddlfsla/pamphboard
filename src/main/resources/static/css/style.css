@@ -1,4 +1,11 @@
-
+:root {
+  --color-one: #7F1F45;
+  --color-two: #6E2D5B;
+  --color-three: #573967;
+  --color-four: #404169;
+  --color-five: #314663;
+  --color-six: #2F4858;
+}
 @font-face {
   font-family: "Source Sans Pro";
   src: url("/static/assets/googlefonts/fonts/SourceSansPro-Regular.ttf") format("truetype");
@@ -30,6 +37,10 @@ a {
 
 .navbar_menu li {
   padding: 10px 14px;
+}
+
+.navbar_menu li:hover {
+
 }
 
 .navbar_link_icons {
