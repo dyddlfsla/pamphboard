@@ -3,7 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
   <title>pamphBoard</title>
-  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <link th:href="@{/assets/fontawesome/css/all.css}" th:rel="stylesheet">
+  <link th:href="@{/css/style.css}" th:rel="stylesheet">
 </head>
 <body>
   <nav th:class="navbar">
@@ -15,8 +16,8 @@
       <li><a th:href="@{#}">Board</a></li>
     </ul>
     <ul th:class="navbar_link_icons">
-      <li>facebook</li>
-      <li>twitter</li>
+      <li><a th:href="@{#}"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a th:href="@{#}"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
   </nav>
 </body>
