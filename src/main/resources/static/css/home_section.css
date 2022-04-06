@@ -1,0 +1,17 @@
+.section {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+}
+
+.section_intro {
+  padding-top: 40px;
+}
+
+.section_intro span {
+  font-size: 72px;
+}
+
+.section_intro p {
+  font-size: 24px;
+}

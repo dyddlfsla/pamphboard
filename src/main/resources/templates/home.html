@@ -6,13 +6,14 @@
   <link th:href="@{/assets/fontawesome/css/all.css}" th:rel="stylesheet">
   <link th:href="@{/css/nav.css}" th:rel="stylesheet">
   <link th:href="@{/css/footer.css}" th:rel="stylesheet">
+  <link th:href="@{/css/home_section.css}" th:rel="stylesheet">
 </head>
 <body>
 <header>
   <nav th:class="navbar">
     <div th:class="navbar_logo">
       <a th:href="@{/}">
-        <img th:src="@{/images/logos/pamphBoard-logo.png}" th:width="150"/>
+        <img th:src="@{/images/logos/pamphBoard-logo.png}" th:width="100"/>
       </a>
     </div>
     <ul th:class="navbar_menu">
@@ -42,9 +43,22 @@
     </ul>
   </nav>
 </header>
+<section th:class="section">
+  <article th:class="section_intro">
+    <span th:class="heading">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      Notice
+    </span>
+    <p>
+      Here is Someone's Workspace.<br>
+      You could come across something that looks very odd or somehow stupid.<br>
+      But as time goes by, It might be pretty Awesome!
+    </p>
+  </article>
+</section>
 <footer th:class="footer">
   <div th:class="footer_right">
-    <p>Copyright 2022 pamph91. All right reserved | 7942dyddlfsla@naver.com</p>
+    <p>Copyright 2022 pamphBoard All right reserved | 7942dyddlfsla@naver.com</p>
   </div>
 </footer>
 </body>
