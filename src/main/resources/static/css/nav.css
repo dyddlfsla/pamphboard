@@ -27,7 +27,9 @@ a {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-one);
-  padding: 10px 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-bottom: 2px solid #000;;
 }
 
 .navbar_menu {
