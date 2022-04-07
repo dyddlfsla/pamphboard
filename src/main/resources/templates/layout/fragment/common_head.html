@@ -1,0 +1,8 @@
+<head th:fragment="common_head(links)">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>pamphBoard</title>
+  <link th:href="@{/assets/fontawesome/css/all.css}" th:rel="stylesheet">
+  <link th:href="@{/css/nav.css}" th:rel="stylesheet">
+  <link th:href="@{/css/footer.css}" th:rel="stylesheet">
+  <th:block th:replace="${links}"/>
+</head>

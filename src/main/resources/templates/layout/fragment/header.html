@@ -1,0 +1,39 @@
+<header th:fragment="header">
+  <nav th:class="navbar">
+    <div th:class="navbar_logo">
+      <a th:href="@{/}">
+        <img th:src="@{/images/logos/pamphBoard-logo.png}" th:width="100"/>
+      </a>
+    </div>
+    <ul th:class="navbar_menu">
+      <li>
+        <a th:href="@{/}">Home</a>
+      </li>
+      <li>
+        <a th:href="@{#}">Board</a>
+      </li>
+    </ul>
+    <ul th:class="navbar_link_icons">
+      <li>
+        <a th:href="@{https://www.facebook.com/profile.php?id=100069028367348}" th:target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{https://twitter.com/YNNNzpOjL9YYgJZ}" th:target="_blank">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{https://rosepamphyle42.tistory.com}" th:target="_blank">
+          <i class="fa-solid fa-t"></i>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{https://github.com/dyddlfsla}" th:target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
