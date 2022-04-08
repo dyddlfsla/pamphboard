@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <title>pamphBoard</title>
-  <style>
-    table {
-      border: 1px solid #444444;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #444444;
-    }
-  </style>
+<head th:replace="~{layout/fragment/common_head :: common_head(~{::link})}">
+  <link th:href="@{/css/board_section.css}" th:rel="stylesheet">
 </head>
 <body>
-<h1>PamphBoard</h1>
-<div>
-  <div>
+<header th:replace="~{layout/fragment/header :: header}"></header>
+<section class="section">
+  <article th:class="section_board">
     <table>
+      <caption>자유 게시판</caption>
       <thead>
       <tr>
         <th>번호</th>
         <th>제목</th>
-        <th>작성자</th>
-        <th>작성일시</th>
+        <th>글쓴이</th>
+        <th>등록일</th>
       </tr>
       </thead>
       <tbody>
       <tr th:each="post, status : ${foundPosts}">
-        <td th:text="${status.count}"></td>
-        <td th:text="${post.title}"></td>
-        <td th:text="${post.writer}"></td>
-        <td th:text="${{post.regDate}}"></td>
+        <td th:text="${status.count}">번호</td>
+        <td th:text="${post.title}">제목</td>
+        <td th:text="${post.writer}">글쓴이</td>
+        <td th:text="${{post.regDate}}">등록일</td>
       </tr>
       </tbody>
     </table>
-  </div>
-</div>
+    <div th:class="board_btn">
+
+    </div>
+  </article>
+</section>
+<footer th:replace="~{layout/fragment/footer :: footer}"></footer>
 </body>
 </html>
