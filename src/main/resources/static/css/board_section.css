@@ -37,3 +37,21 @@ td, th {
 tr:first-child td {
   border-top:none;
 }
+
+.board_button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.board_button button {
+  cursor: pointer;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  border: none;
+  background-color: var(--color-six);
+  color: white;
+  font-size: 14px;
+  width: 85px;
+  height: 35px;
+}
