@@ -8,7 +8,7 @@
 <h1>PamphBoard</h1>
 <div>
   <div>
-    <form th:action="@{/posts/save}" th:object="${PostDto}" method="post">
+    <form th:action="@{/post/save}" th:object="${PostDto}" method="post">
       <div>
         <label th:for="writer">작성자</label>
         <input type="text" th:field="*{writer}" placeholder="작성자 이름을 입력하세요." required>

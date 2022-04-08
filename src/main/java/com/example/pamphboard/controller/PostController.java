@@ -20,19 +20,19 @@ public class PostController {
     this.postService = postService;
   }
 
-  @GetMapping("/posts/save")
+  @GetMapping("/post/save")
   public String saveForm(Model model) {
     model.addAttribute("PostDto", new PostDto());
     return "post/saveForm";
   }
 
-  @PostMapping("/posts/save")
+  @PostMapping("/post/save")
   public String save(@ModelAttribute PostDto postDto) {
     postService.save(postDto);
     return "redirect:/";
   }
 
-  @GetMapping("/posts/list")
+  @GetMapping("/post/list")
   public String list(Model model) {
     List<PostDto> foundPosts = postService.findAll();
     model.addAttribute("foundPosts", foundPosts);
