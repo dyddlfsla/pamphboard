@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <title>pamphBoard</title>
+<head th:replace="~{layout/fragment/common_head :: common_head(~{::link})}">
+  <link th:href="@{/css/postForm_section.css}" th:rel="stylesheet">
 </head>
 <body>
-<h1>PamphBoard</h1>
-<div>
-  <div>
-    <form th:action="@{/post/save}" th:object="${PostDto}" method="post">
-      <div>
-        <label th:for="writer">작성자</label>
-        <input type="text" th:field="*{writer}" placeholder="작성자 이름을 입력하세요." required>
+<header th:replace="~{layout/fragment/header :: header}"></header>
+<section th:class="section">
+  <form th:class="section_postForm" th:action="@{/post/save}" th:object="${PostDto}" th:method="post">
+    <div th:class="|form_top item|">
+      <div th:class="writer">
+        <label th:for="writer">글쓴이</label>
+        <input th:type="text" th:field="*{writer}" th:placeholder="|이름을 입력하세요.|" required>
+      </div>
+      <div th:class="password">
         <label th:for="password">비밀번호</label>
-        <input type="password" th:field="*{password}" placeholder="비밀번호를 입력하세요." required>
+        <input type="password" th:field="*{password}" th:placeholder="|비밀번호를 입력하세요.|" required>
       </div>
-      <div>
-        <label th:for="title">제목</label>
-        <input type="text" th:field="*{title}" placeholder="글 제목을 입력하세요." required>
-      </div>
-      <div>
-        <label th:for="content">내용</label>
-        <textarea th:field="*{content}" placeholder="글 내용을 입력하세요." required></textarea>
-      </div>
-      <button id="btn-save">등록</button>
-      <button type="button" onclick="location.href='/'">취소</button>
-    </form>
-  </div>
-</div>
+    </div>
+    <div th:class="|title item|">
+      <input th:type="text" th:field="*{title}" th:size="80" th:placeholder="|제목을 입력하세요.|" required>
+    </div>
+    <div th:class="|content item|">
+      <textarea th:field="*{content}" th:rows="30" th:cols="82" th:placeholder="|내용을 입력하세요.|" required></textarea>
+    </div>
+    <div th:class="btn">
+      <button th:class="btn-save">
+        <i class="fa-solid fa-check fa-xs"></i>완료
+      </button>
+      <button th:type="button" th:onclick="|location.href='@{/post/list}'|">
+        <i class="fa-solid fa-xmark fa-xs"></i>취소
+      </button>
+    </div>
+  </form>
+</section>
+<footer th:replace="~{layout/fragment/footer :: footer}"></footer>
 </body>
 </html>
