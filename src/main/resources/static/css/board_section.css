@@ -5,7 +5,7 @@
 }
 
 .section_board {
-  padding-top:60px;
+  padding-top: 60px;
 }
 
 table {
@@ -35,7 +35,7 @@ td, th {
 }
 
 tr:first-child td {
-  border-top:none;
+  border-top: none;
 }
 
 .board_button {
