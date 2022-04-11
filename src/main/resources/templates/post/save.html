@@ -6,7 +6,7 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section th:class="section">
-  <form th:class="section_postForm" th:action="@{/post/save}" th:object="${PostDto}" th:method="post">
+  <form th:class="section_postForm" th:action="@{/post/save/new}" th:object="${PostDto}" th:method="post">
     <div th:class="|form_top item|">
       <div th:class="writer">
         <label th:for="writer">글쓴이</label>
@@ -24,7 +24,7 @@
       <textarea th:field="*{content}" th:rows="30" th:cols="82" th:placeholder="|내용을 입력하세요.|" required></textarea>
     </div>
     <div th:class="btn">
-      <button th:class="btn-save">
+      <button th:type="submit" th:class="btn-save">
         <i class="fa-solid fa-check fa-xs"></i>완료
       </button>
       <button th:type="button" th:onclick="|location.href='@{/post/list}'|">

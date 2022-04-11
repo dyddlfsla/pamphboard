@@ -23,13 +23,13 @@ public class PostController {
   @GetMapping("/post/save")
   public String saveForm(Model model) {
     model.addAttribute("PostDto", new PostDto());
-    return "post/saveForm";
+    return "/post/save";
   }
 
-  @PostMapping("/post/save")
+  @PostMapping("/post/save/new")
   public String save(@ModelAttribute PostDto postDto) {
     postService.save(postDto);
-    return "redirect:/";
+    return "redirect:/post/list";
   }
 
   @GetMapping("/post/list")
