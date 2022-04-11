@@ -55,3 +55,7 @@ tr:first-child td {
   width: 85px;
   height: 35px;
 }
+
+.board_button button i {
+  padding-right: 4px;
+}
