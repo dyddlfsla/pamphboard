@@ -22,7 +22,7 @@
         <td th:text="${status.count}">번호</td>
         <td th:text="${post.title}">제목</td>
         <td th:text="${post.writer}">글쓴이</td>
-        <td th:text="${{post.regDate}}">등록일</td>
+        <td th:text="${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}">등록일</td>
       </tr>
       </tbody>
     </table>
