@@ -4,19 +4,19 @@ import java.time.LocalDateTime;
 
 public class PostDto {
 
-  private long idx;
+  private long postIdx;
   private String author;
   private String password;
   private String title;
   private String content;
   private LocalDateTime regDate;
 
-  public long getIdx() {
-    return idx;
+  public long getPostIdx() {
+    return postIdx;
   }
 
-  public void setIdx(long idx) {
-    this.idx = idx;
+  public void setPostIdx(long postIdx) {
+    this.postIdx = postIdx;
   }
 
   public String getAuthor() {
