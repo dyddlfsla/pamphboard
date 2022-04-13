@@ -21,7 +21,7 @@
       <tr th:each="post, status : ${foundPosts}">
         <td th:text="${status.count}">번호</td>
         <td th:text="${post.title}">제목</td>
-        <td th:text="${post.writer}">글쓴이</td>
+        <td th:text="${post.author}">글쓴이</td>
         <td th:text="${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}">등록일</td>
       </tr>
       </tbody>

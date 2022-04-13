@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class PostDto {
 
   private long idx;
-  private String writer;
+  private String author;
   private String password;
   private String title;
   private String content;
@@ -19,12 +19,12 @@ public class PostDto {
     this.idx = idx;
   }
 
-  public String getWriter() {
-    return writer;
+  public String getAuthor() {
+    return author;
   }
 
-  public void setWriter(String writer) {
-    this.writer = writer;
+  public void setAuthor(String author) {
+    this.author = author;
   }
 
   public String getPassword() {
