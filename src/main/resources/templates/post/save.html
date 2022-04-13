@@ -14,7 +14,7 @@
       </div>
       <div th:class="password">
         <label th:for="password">비밀번호</label>
-        <input type="password" th:field="*{password}" th:placeholder="|비밀번호를 입력하세요.|" required>
+        <input type="password" th:field="*{password}" th:placeholder="|비밀번호를 입력하세요.|" th:maxlength="10" th:required>
       </div>
     </div>
     <div th:class="|title item|">
