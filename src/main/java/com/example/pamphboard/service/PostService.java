@@ -3,17 +3,15 @@ package com.example.pamphboard.service;
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PostService {
 
-  private PostDao postDao;
-  private PasswordEncoder passwordEncoder;
+  private final PostDao postDao;
+  private final PasswordEncoder passwordEncoder;
 
-  @Autowired
   PostService(PostDao postDao, PasswordEncoder passwordEncoder) {
     this.postDao = postDao;
     this.passwordEncoder = passwordEncoder;
