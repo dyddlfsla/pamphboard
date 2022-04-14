@@ -4,23 +4,31 @@ import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PostService {
 
   private PostDao postDao;
+  private PasswordEncoder passwordEncoder;
 
   @Autowired
-  PostService(PostDao postDao) {
+  PostService(PostDao postDao, PasswordEncoder passwordEncoder) {
     this.postDao = postDao;
+    this.passwordEncoder = passwordEncoder;
   }
 
   public void save(PostDto postDto) {
-    postDao.save(postDto);
+    postDao.save(encryptPost(postDto));
   }
 
   public List<PostDto> findAll() {
     return postDao.findAll();
+  }
+
+  private PostDto encryptPost(PostDto postDto) {
+    postDto.setPassword(passwordEncoder.encode(postDto.getPassword()));
+    return postDto;
   }
 }
