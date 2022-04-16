@@ -36,4 +36,9 @@ public class PostController {
     model.addAttribute("foundPosts", foundPosts);
     return "post/list";
   }
+
+  @GetMapping("/post/read")
+  public String read() {
+    return "post/read";
+  }
 }
