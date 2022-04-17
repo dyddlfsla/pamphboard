@@ -6,7 +6,7 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section th:class="section">
-  <form th:class="section_postForm" th:action="@{/post/save/new}" th:object="${PostDto}" th:method="post">
+  <form th:class="post_form" th:action="@{/post/save/new}" th:object="${PostDto}" th:method="post">
     <div th:class="|form_top item|">
       <div th:class="author">
         <label th:for="author">글쓴이</label>
