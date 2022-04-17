@@ -72,7 +72,6 @@ textarea {
   border-radius: 5px;
   letter-spacing: 3px;
   border: none;
-  background-color: var(--color-four);
   color: white;
   font-size: 14px;
   width: 85px;
@@ -81,6 +80,14 @@ textarea {
 
 .btn button:hover {
   background-color: var(--color-six);
+}
+
+.btn_save {
+  background-color: var(--color-three);
+}
+
+.btn_cancel {
+  background-color: var(--color-four);
 }
 
 .btn button i {
