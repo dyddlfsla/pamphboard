@@ -20,11 +20,9 @@
 .info {
   display: flex;
   justify-content: space-between;
-}
-
-.info .reg_date {
   font-size: 14px;
   color: dimgray;
+  padding: 0px 5px;
 }
 
 .content {
