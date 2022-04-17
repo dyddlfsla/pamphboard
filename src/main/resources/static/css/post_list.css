@@ -38,6 +38,10 @@ td > a {
   color:#000;
 }
 
+td > a:visited {
+  color:purple;
+}
+
 td > a:hover {
   text-decoration: underline;
 }
