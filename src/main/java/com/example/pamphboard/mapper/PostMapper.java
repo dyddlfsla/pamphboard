@@ -16,4 +16,6 @@ public interface PostMapper {
   @Select("SELECT * FROM BOARD_POST")
   List<PostDto> selectAll();
 
+  @Select("SELECT * FROM BOARD_POST WHERE post_idx = #{post_idx}")
+  PostDto selectOne(long postIdx);
 }

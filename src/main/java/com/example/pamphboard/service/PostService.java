@@ -29,4 +29,8 @@ public class PostService {
     postDto.setPassword(passwordEncoder.encode(postDto.getPassword()));
     return postDto;
   }
+
+  public PostDto findByIdx(long postIdx) {
+    return postDao.findByIdx(postIdx);
+  }
 }

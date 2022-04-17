@@ -21,4 +21,8 @@ public class PostDao {
   public List<PostDto> findAll() {
     return postMapper.selectAll();
   }
+
+  public PostDto findByIdx(long postIdx) {
+    return postMapper.selectOne(postIdx);
+  }
 }
