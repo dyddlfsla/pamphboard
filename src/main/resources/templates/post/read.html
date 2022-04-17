@@ -16,7 +16,7 @@
         <span th:text="'| ' + ${#temporals.format(foundPost.regDate, 'yy-MM-dd HH:mm')}" th:class="reg_date">등록일</span>
       </div>
     </div>
-    <div th:class="|content|">
+    <div th:class="content">
       <p th:text="${foundPost.content}">본문</p>
     </div>
     <div th:class="btn">

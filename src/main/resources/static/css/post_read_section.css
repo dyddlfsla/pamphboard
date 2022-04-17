@@ -32,6 +32,10 @@
   border-bottom: 2px solid var(--color-three);
 }
 
+.content p {
+  white-space: break-spaces;
+}
+
 .item {
   text-align: center;
 }
