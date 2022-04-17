@@ -2,7 +2,6 @@ package com.example.pamphboard.controller;
 
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.service.PostService;
-import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,15 +32,13 @@ public class PostController {
 
   @GetMapping("/post/list")
   public String list(Model model) {
-    List<PostDto> foundPosts = postService.findAll();
-    model.addAttribute("foundPosts", foundPosts);
+    model.addAttribute("foundPosts", postService.findAll());
     return "post/list";
   }
 
   @GetMapping("/post/read/{postIdx}")
   public String read(@PathVariable long postIdx, Model model) {
-    PostDto foundPost = postService.findByIdx(postIdx);
-    model.addAttribute("foundPost", foundPost);
+    model.addAttribute("foundPost", postService.findByIdx(postIdx));
     return "post/read";
   }
 }

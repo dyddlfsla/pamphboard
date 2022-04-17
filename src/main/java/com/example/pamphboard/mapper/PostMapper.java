@@ -13,9 +13,9 @@ public interface PostMapper {
         + "VALUES(#{author}, #{password}, #{title}, #{content})")
   void insert(PostDto postDto);
 
-  @Select("SELECT * FROM BOARD_POST")
-  List<PostDto> selectAll();
-
   @Select("SELECT * FROM BOARD_POST WHERE post_idx = #{post_idx}")
   PostDto selectOne(long postIdx);
+
+  @Select("SELECT * FROM BOARD_POST")
+  List<PostDto> selectAll();
 }
