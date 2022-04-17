@@ -1,0 +1,68 @@
+.section {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+}
+
+.section_contents {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  width: 800px;
+}
+
+.heading {
+  padding: 15px 10px;
+  border-top: 2px solid var(--color-three);
+  border-bottom: 1px solid var(--color-three);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .reg_date {
+  font-size: 14px;
+  color: dimgray;
+}
+
+.content {
+  padding: 15px 10px;
+  border-bottom: 2px solid var(--color-three);
+}
+
+.item {
+  text-align: center;
+}
+
+.btn {
+  display: flex;
+  justify-content:space-between;
+  padding: 15px 5px;
+  text-align: right;
+}
+
+.btn_return {
+
+}
+
+.btn button {
+  cursor: pointer;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  border: none;
+  background-color: var(--color-four);
+  color: white;
+  font-size: 14px;
+  width: 85px;
+  height: 35px;
+}
+
+.btn button:hover {
+  background-color: var(--color-six);
+}
+
+.btn button i {
+  padding-right: 4px;
+}

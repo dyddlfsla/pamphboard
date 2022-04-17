@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/fragment/common_head :: common_head(~{::link})}">
+  <link th:href="@{/css/post_read_section.css}" th:rel="stylesheet">
 </head>
 <body>
-
+<header th:replace="~{layout/fragment/header :: header}"></header>
+<section th:class="section">
+  <article th:class="section_contents">
+    <div th:class="heading">
+      <div>
+        <h1 th:text="${foundPost.title}">제목</h1>
+      </div>
+      <div th:class="info">
+        <span th:text="${foundPost.author}" th:class="author">아이디</span>
+        <span th:text="'| ' + ${#temporals.format(foundPost.regDate, 'yy-MM-dd HH:mm')}" th:class="reg_date">등록일</span>
+      </div>
+    </div>
+    <div th:class="|content|">
+      <p th:text="${foundPost.content}">본문</p>
+    </div>
+    <div th:class="btn">
+      <div th:class="left">
+        <button th:type="button" th:class="btn_return" th:onclick="|location.href='@{/post/list}'|">
+          <i class="fa-solid fa-bars fa-xs"></i>목록
+        </button>
+      </div>
+      <div th:class="right">
+        <button th:type="submit" th:class="btn_update">
+          <i class="fa-solid fa-pen-to-square fa-xs"></i>수정
+        </button>
+        <button th:type="button" th:class="btn_delete" th:onclick="|location.href='@{#}'|">
+          <i class="fa-solid fa-trash-can fa-xs"></i>삭제
+        </button>
+      </div>
+    </div>
+  </article>
+</section>
+<footer th:replace="~{layout/fragment/footer :: footer}"></footer>
 </body>
 </html>

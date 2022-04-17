@@ -25,6 +25,10 @@ public class PostService {
     return postDao.findAll();
   }
 
+  public PostDto findByIdx(long postIdx) {
+    return postDao.findByIdx(postIdx);
+  }
+
   private PostDto encryptPost(PostDto postDto) {
     postDto.setPassword(passwordEncoder.encode(postDto.getPassword()));
     return postDto;
