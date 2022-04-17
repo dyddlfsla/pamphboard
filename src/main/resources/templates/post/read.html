@@ -6,10 +6,10 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section th:class="section">
-  <article th:class="section_contents" th:action="@{/post/save/new}" th:object="${PostDto}" th:method="post">
+  <article th:class="section_contents" th:object="${PostDto}">
     <div th:class="heading">
       <div>
-        <p>제목</p>
+        <h1>제목</h1>
       </div>
       <div th:class="info">
         <span th:class="author">아이디</span>
