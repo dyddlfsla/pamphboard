@@ -5,9 +5,10 @@ import com.example.pamphboard.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostController {
@@ -24,10 +25,10 @@ public class PostController {
     return "/post/save";
   }
 
+  @ResponseBody
   @PostMapping("/post/save/new")
-  public String save(@ModelAttribute PostDto postDto) {
-    postService.save(postDto);
-    return "redirect:/post/list";
+  public Long save(@RequestBody PostDto postDto) {
+    return postService.save(postDto);
   }
 
   @GetMapping("/post/list")

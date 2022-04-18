@@ -28,16 +28,17 @@
       <textarea th:field="*{content}" th:rows="30" th:cols="82" th:placeholder="|내용을 입력하세요.|" th:required></textarea>
     </div>
     <div th:class="btn">
-      <button th:type="button" th:class="btn_save" th:onclick="save()">
+      <button th:type="button" th:class="btn_save">
         <i class="fa-solid fa-check fa-xs"></i>확인
       </button>
-      <button th:type="button" th:class="btn_cancel" th:onclick="|location.href='@{/post/list}'|">
+      <button th:type="button" th:class="btn_cancel">
         <i class="fa-solid fa-xmark fa-xs"></i>취소
       </button>
     </div>
   </form>
 </section>
 <footer th:replace="~{layout/fragment/footer :: footer}"></footer>
+<script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
 <script th:src="@{/js/post_save.js}"></script>
 </body>
 </html>

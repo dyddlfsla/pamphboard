@@ -17,8 +17,8 @@ public class PostService {
     this.passwordEncoder = passwordEncoder;
   }
 
-  public void save(PostDto postDto) {
-    postDao.save(encryptPost(postDto));
+  public Long save(PostDto postDto) {
+    return postDao.save(encryptPost(postDto));
   }
 
   public List<PostDto> findAll() {

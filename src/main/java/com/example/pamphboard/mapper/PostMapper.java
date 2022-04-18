@@ -11,7 +11,7 @@ public interface PostMapper {
 
   @Insert("INSERT INTO BOARD_POST(author, password, title, content) "
         + "VALUES(#{author}, #{password}, #{title}, #{content})")
-  void insert(PostDto postDto);
+  Long insert(PostDto postDto);
 
   @Select("SELECT * FROM BOARD_POST WHERE post_idx = #{post_idx}")
   PostDto selectOne(long postIdx);
