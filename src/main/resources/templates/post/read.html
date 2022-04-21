@@ -21,7 +21,7 @@
     </div>
     <div th:class="btn">
       <div th:class="left">
-        <button th:type="button" th:class="btn_return" th:onclick="|location.href='@{/post/list}'|">
+        <button th:type="button" th:class="btn_return_list" th:onclick="|location.href='@{/post/list}'|">
           <i class="fa-solid fa-bars fa-xs"></i>목록
         </button>
       </div>
@@ -29,13 +29,19 @@
         <button th:type="submit" th:class="btn_update">
           <i class="fa-solid fa-pen-to-square fa-xs"></i>수정
         </button>
-        <button th:type="button" th:class="btn_delete" th:onclick="|location.href='@{#}'|">
+        <button th:type="button" th:class="btn_delete">
           <i class="fa-solid fa-trash-can fa-xs"></i>삭제
         </button>
       </div>
     </div>
+    <div th:class="verify_box">
+      <label th:for="password">비밀번호 확인</label>
+      <input th:id="password" th:type="password">
+    </div>
   </article>
 </section>
 <footer th:replace="~{layout/fragment/footer :: footer}"></footer>
+<script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
+<script th:src="@{/js/post_read.js}"></script>
 </body>
 </html>

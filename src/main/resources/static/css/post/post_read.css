@@ -45,10 +45,6 @@
   text-align: right;
 }
 
-.btn_return {
-
-}
-
 .btn button {
   cursor: pointer;
   border-radius: 5px;
@@ -67,4 +63,10 @@
 
 .btn button i {
   padding-right: 4px;
+}
+
+.verify_box {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: flex-end;
 }
