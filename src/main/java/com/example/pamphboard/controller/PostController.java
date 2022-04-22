@@ -42,4 +42,10 @@ public class PostController {
     model.addAttribute("foundPost", postService.findByIdx(postIdx));
     return "post/read";
   }
+
+  @ResponseBody
+  @PostMapping("/verify/password/{postIdx}")
+  public boolean verifyPassword(@PathVariable long postIdx, String password) {
+    return postService.isPWCorrect(postIdx, password);
+  }
 }

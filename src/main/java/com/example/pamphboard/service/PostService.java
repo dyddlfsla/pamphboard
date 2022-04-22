@@ -33,4 +33,8 @@ public class PostService {
     postDto.setPassword(passwordEncoder.encode(postDto.getPassword()));
     return postDto;
   }
+
+  public boolean isPWCorrect(long postIdx, String password) {
+    return passwordEncoder.matches(password, postDao.findByIdx(postIdx).getPassword());
+  }
 }

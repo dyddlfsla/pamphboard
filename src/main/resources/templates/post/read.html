@@ -14,6 +14,7 @@
       <div th:class="info">
         <span th:text="${foundPost.author}" th:class="author">아이디</span>
         <span th:text="'| ' + ${#temporals.format(foundPost.regDate, 'yy-MM-dd HH:mm')}" th:class="reg_date">등록일</span>
+        <input th:id="postIdx" th:type="hidden" th:value="${foundPost.postIdx}"/>
       </div>
     </div>
     <div th:class="content">
@@ -45,6 +46,6 @@
 </section>
 <footer th:replace="~{layout/fragment/footer :: footer}"></footer>
 <script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
-<script th:src="@{/js/post_read.js}"></script>
+<script th:inline="javascript" th:src="@{/js/post_read.js}"></script>
 </body>
 </html>
