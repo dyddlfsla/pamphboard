@@ -38,14 +38,14 @@
   text-align: center;
 }
 
-.btn {
+.btn_box {
   display: flex;
   justify-content:space-between;
   padding: 15px 5px;
   text-align: right;
 }
 
-.btn button {
+.btn_box button {
   cursor: pointer;
   border-radius: 5px;
   letter-spacing: 3px;
@@ -57,16 +57,44 @@
   height: 35px;
 }
 
-.btn button:hover {
+.btn_box button:hover {
   background-color: var(--color-six);
 }
 
-.btn button i {
+.btn_box button i {
   padding-right: 4px;
 }
 
 .verify_box {
-  margin: 10px 0px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 15px 5px;
   display: flex;
   justify-content: flex-end;
+}
+
+.verify_box label {
+  font-weight:bold;
+  margin-right: 10px;
+}
+
+.verify_box input {
+  width: 100px;
+  margin-right: 5px;
+}
+
+.verify_box button {
+  cursor: pointer;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: var(--color-four);
+  color: white;
+  font-size: 12px;
+  width: 50px;
+  height: 23px;
+}
+
+.verify_box button:hover {
+  background-color: var(--color-six);
 }

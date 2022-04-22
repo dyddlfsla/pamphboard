@@ -19,13 +19,13 @@
     <div th:class="content">
       <p th:text="${foundPost.content}">본문</p>
     </div>
-    <div th:class="btn">
-      <div th:class="left">
+    <div th:class="btn_box">
+      <div th:class="left_btn">
         <button th:type="button" th:class="btn_return_list" th:onclick="|location.href='@{/post/list}'|">
           <i class="fa-solid fa-bars fa-xs"></i>목록
         </button>
       </div>
-      <div th:class="right">
+      <div th:class="right_btn">
         <button th:type="submit" th:class="btn_update">
           <i class="fa-solid fa-pen-to-square fa-xs"></i>수정
         </button>
@@ -35,8 +35,9 @@
       </div>
     </div>
     <div th:class="verify_box">
-      <label th:for="password">비밀번호 확인</label>
+      <label th:for="password">비밀번호</label>
       <input th:id="password" th:type="password">
+      <button th:type="button">확인</button>
     </div>
   </article>
 </section>
