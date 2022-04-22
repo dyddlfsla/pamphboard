@@ -66,6 +66,7 @@
 }
 
 .verify_box {
+  /*visibility: hidden;*/
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 15px 5px;
@@ -84,6 +85,7 @@
 }
 
 .verify_box button {
+  margin-right: 10px;
   cursor: pointer;
   border-radius: 3px;
   letter-spacing: 1px;

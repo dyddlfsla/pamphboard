@@ -37,7 +37,9 @@
     <div th:class="verify_box">
       <label th:for="password">비밀번호</label>
       <input th:id="password" th:type="password">
-      <button th:type="button">확인</button>
+      <span th:class="verify_cancel">
+        <i class="fa-solid fa-xmark"></i>
+      </span>
     </div>
   </article>
 </section>
