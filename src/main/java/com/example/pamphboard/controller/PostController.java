@@ -6,9 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostController {
@@ -25,12 +22,6 @@ public class PostController {
     return "/post/save";
   }
 
-  @ResponseBody
-  @PostMapping("/post/save/new")
-  public Long save(@RequestBody PostDto postDto) {
-    return postService.save(postDto);
-  }
-
   @GetMapping("/post/list")
   public String list(Model model) {
     model.addAttribute("posts", postService.findAll());
@@ -41,12 +32,6 @@ public class PostController {
   public String read(@PathVariable long postIdx, Model model) {
     model.addAttribute("post", postService.findByIdx(postIdx));
     return "post/read";
-  }
-
-  @ResponseBody
-  @PostMapping("/verify/password/")
-  public boolean verifyPassword(long postIdx, String password) {
-    return postService.isPWCorrect(postIdx, password);
   }
 
   @GetMapping("/post/modify/{postIdx}")

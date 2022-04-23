@@ -3,11 +3,13 @@ const idx = $('#postIdx').val();
 const Read = {
   init: function () {
     let innerThis = this;
+    let isPWCorrect;
     $('.btn_return_list').on('click', function () {
       location.href = '/post/list';
     });
-    $('.btn_update').on('click', function () {
+    $('.btn_modify').on('click', function () {
       $('.verify_box').css('visibility', 'visible');
+      $('#password').focus();
       process = 'modify';
     });
     $('.btn_delete').on('click', function () {
@@ -20,13 +22,23 @@ const Read = {
     $('#password').on('keyup', function (event) {
       if (event.keyCode === 13) {
         if (confirm(`${innerThis.comment()}`)) {
-          innerThis.verify();
+          isPWCorrect = innerThis.verify();
+          if (isPWCorrect && process === 'modify') {
+            innerThis.modify();
+          }
+          if (isPWCorrect && process === 'delete') {
+            innerThis.delete();
+          }
+          if (!isPWCorrect) {
+            alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
+          }
         }
       }
     })
   },
 
   verify: function () {
+    let isPWCorrect
     let data = {
       postIdx: idx,
       password: $('#password').val()
@@ -36,19 +48,13 @@ const Read = {
       url: `/verify/password/`,
       dataType: 'json',
       data: data,
+      async: false,
     }).done(function (result) {
-      if (result && process === 'modify') {
-        location.href = `/post/modify/${idx}`;
-      }
-      if (result && process === 'delete') {
-        //삭제 요청
-      }
-      if (!result) {
-        alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
-      }
+      isPWCorrect = result;
     }).fail(function (error) {
       alert(`관리자에게 문의하세요. error : ${JSON.stringify(error)}`);
     })
+    return isPWCorrect;
   },
 
   comment: function () {
@@ -60,6 +66,21 @@ const Read = {
     }
   },
 
+  modify: function() {
+    location.href = `/post/modify/${idx}`;
+  },
+
+  delete: function() {
+    $.ajax({
+      type: 'DELETE',
+      url: `/post/delete/${idx}`,
+    }).done(function () {
+      alert(`글이 삭제되었습니다.`);
+      location.href = '/post/list';
+    }).fail(function (error) {
+      alert(`관리자에게 문의하세요. error : ${JSON.stringify(error)}`);
+    })
+  }
 }
 
 Read.init();

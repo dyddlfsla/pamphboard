@@ -25,4 +25,8 @@ public class PostDao {
   public PostDto findByIdx(long postIdx) {
     return postMapper.selectOne(postIdx);
   }
+
+  public Long deleteById(long postIdx) {
+    return postMapper.deleteOne(postIdx);
+  }
 }

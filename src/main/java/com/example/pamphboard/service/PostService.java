@@ -37,4 +37,8 @@ public class PostService {
   public boolean isPWCorrect(long postIdx, String password) {
     return passwordEncoder.matches(password, postDao.findByIdx(postIdx).getPassword());
   }
+
+  public Long deleteById(long postIdx) {
+    return postDao.deleteById(postIdx);
+  }
 }

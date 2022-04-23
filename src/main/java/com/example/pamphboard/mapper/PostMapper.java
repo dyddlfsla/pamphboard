@@ -2,6 +2,7 @@ package com.example.pamphboard.mapper;
 
 import com.example.pamphboard.dto.PostDto;
 import java.util.List;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -18,4 +19,7 @@ public interface PostMapper {
 
   @Select("SELECT * FROM BOARD_POST")
   List<PostDto> selectAll();
+
+  @Delete("DELETE FROM BOARD_POST WHERE post_idx = #{post_idx}")
+  Long deleteOne(long postIdx);
 }
