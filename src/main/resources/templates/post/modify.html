@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/fragment/common_head :: common_head(~{::link})}">
+  <link th:href="@{/css/post/post_save.css}" th:rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{layout/fragment/header :: header}"></header>
+<section th:class="section">
+  <form th:class="post_form" th:object="${foundPost}" th:method="post">
+    <div th:class="|form_top item|">
+      <div th:class="author">
+        <label th:for="author">글쓴이</label>
+        <input th:type="text" th:value="${foundPost.author}" th:placeholder="|이름을 입력하세요.|" th:required>
+      </div>
+      <div th:class="password">
+        <label th:for="password">비밀번호</label>
+        <input type="password" th:value="${foundPost.password}" th:placeholder="|비밀번호를 입력하세요.|" th:maxlength="10" th:required>
+      </div>
+    </div>
+    <div th:class="notice">
+      <p>1) 간단한 비밀번호를 사용하면 타인이 수정 또는 삭제할 수 있습니다.<br>
+        2) 불건전한 내용 및 초상권이나 저작권을 침해하는 게시물의 경우 법적인 책임을 질 수 있습니다.</p>
+    </div>
+    <div th:class="|title item|">
+      <input th:type="text" th:value="${foundPost.title}" th:size="80" th:placeholder="|제목을 입력하세요.|" th:required>
+    </div>
+    <div th:class="|content item|">
+      <textarea th:text="${foundPost.content}" th:rows="30" th:cols="82" th:placeholder="|내용을 입력하세요.|" th:required></textarea>
+    </div>
+    <div th:class="btn">
+      <button th:type="button" th:class="btn_update">
+        <i class="fa-solid fa-check fa-xs"></i>확인
+      </button>
+      <button th:type="button" th:class="btn_cancel">
+        <i class="fa-solid fa-xmark fa-xs"></i>취소
+      </button>
+    </div>
+  </form>
+</section>
+<footer th:replace="~{layout/fragment/footer :: footer}"></footer>
+<script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
+</body>
+</html>

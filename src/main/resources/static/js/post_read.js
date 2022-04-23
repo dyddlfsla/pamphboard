@@ -1,4 +1,5 @@
 let process = 'none';
+const idx = $('#postIdx').val();
 const Read = {
   init: function () {
     let innerThis = this;
@@ -26,17 +27,26 @@ const Read = {
   },
 
   verify: function() {
+    let innerThis = this;
     let data = {
-      idx: $('#postIdx').val(),
+      postIdx: idx,
       password: $('#password').val()
     };
     $.ajax({
       type: 'POST',
-      url: '/verify/password/' + data.idx,
+      url: `/verify/password/`,
       dataType: 'json',
       data: data,
     }).done(function (result) {
-      alert(`결과는 ${result}입니다.`);
+      if(result && process === 'update') {
+        location.href = `/post/modify/${idx}`;
+      }
+      if(result && process === 'delete') {
+
+      }
+      if(!result) {
+        alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
+      }
     }).fail(function (error) {
       alert(`관리자에게 문의하세요. error : ${JSON.stringify(error)}`);
     })
@@ -51,9 +61,6 @@ const Read = {
     }
   },
 
-  modify: function() {
-
-  }
 }
 
 Read.init();

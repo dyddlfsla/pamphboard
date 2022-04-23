@@ -44,8 +44,14 @@ public class PostController {
   }
 
   @ResponseBody
-  @PostMapping("/verify/password/{postIdx}")
-  public boolean verifyPassword(@PathVariable long postIdx, String password) {
+  @PostMapping("/verify/password/")
+  public boolean verifyPassword(long postIdx, String password) {
     return postService.isPWCorrect(postIdx, password);
+  }
+
+  @GetMapping("/post/modify/{postIdx}")
+  public String modify(@PathVariable long postIdx, Model model) {
+    model.addAttribute("foundPost", postService.findByIdx(postIdx));
+    return "post/modify";
   }
 }
