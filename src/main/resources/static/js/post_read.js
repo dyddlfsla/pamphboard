@@ -8,26 +8,25 @@ const Read = {
     });
     $('.btn_update').on('click', function () {
       $('.verify_box').css('visibility', 'visible');
-      process = 'update';
+      process = 'modify';
     });
-    $('.btn_delete').on('click', function() {
+    $('.btn_delete').on('click', function () {
       $('.verify_box').css('visibility', 'visible');
       process = 'delete';
     })
-    $('.verify_cancel').on('click', function() {
+    $('.verify_cancel').on('click', function () {
       $('.verify_box').css('visibility', 'hidden');
     })
     $('#password').on('keyup', function (event) {
       if (event.keyCode === 13) {
-        if(confirm(`${innerThis.comment()}하시겠습니까?`)) {
+        if (confirm(`${innerThis.comment()}`)) {
           innerThis.verify();
         }
       }
     })
   },
 
-  verify: function() {
-    let innerThis = this;
+  verify: function () {
     let data = {
       postIdx: idx,
       password: $('#password').val()
@@ -38,13 +37,13 @@ const Read = {
       dataType: 'json',
       data: data,
     }).done(function (result) {
-      if(result && process === 'update') {
+      if (result && process === 'modify') {
         location.href = `/post/modify/${idx}`;
       }
-      if(result && process === 'delete') {
-
+      if (result && process === 'delete') {
+        //삭제 요청
       }
-      if(!result) {
+      if (!result) {
         alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
       }
     }).fail(function (error) {
@@ -53,11 +52,11 @@ const Read = {
   },
 
   comment: function () {
-    if (process === 'update') {
-      return '수정';
+    if (process === 'modify') {
+      return '수정하시겠습니까?';
     }
     if (process === 'delete') {
-      return '삭제';
+      return '삭제하시겠습니까?';
     }
   },
 
