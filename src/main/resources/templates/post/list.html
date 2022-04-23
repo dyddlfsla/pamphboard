@@ -6,7 +6,7 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section class="section">
-  <article th:class="section_board">
+  <article class="section_board">
     <table>
       <caption>자유 게시판</caption>
       <thead>
@@ -26,7 +26,7 @@
       </tr>
       </tbody>
     </table>
-    <div th:class="board_button">
+    <div class="board_button">
         <button th:type="button" th:onclick="|location.href='@{/post/save}'|">
           <i class="fa-solid fa-pencil fa-xs"></i>글쓰기
         </button>

@@ -5,40 +5,40 @@
 </head>
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
-<section th:class="section">
-  <article th:class="section_contents">
-    <div th:class="heading">
+<section class="section">
+  <article class="section_contents">
+    <div class="heading">
       <div>
         <h1 th:text="${post.title}">제목</h1>
       </div>
-      <div th:class="info">
-        <span th:text="${post.author}" th:class="author">아이디</span>
-        <span th:text="'| ' + ${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}" th:class="reg_date">등록일</span>
+      <div class="info">
+        <span th:text="${post.author}" class="author">아이디</span>
+        <span th:text="'| ' + ${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}" class="reg_date">등록일</span>
         <input th:type="hidden" th:id="postIdx" th:value="${post.postIdx}"/>
       </div>
     </div>
-    <div th:class="content">
+    <div class="content">
       <p th:text="${post.content}">본문</p>
     </div>
-    <div th:class="btn_box">
-      <div th:class="left_btn">
-        <button th:type="button" th:class="btn_return_list">
+    <div class="btn_box">
+      <div class="left_btn">
+        <button th:type="button" class="btn_return_list">
           <i class="fa-solid fa-bars fa-xs"></i>목록
         </button>
       </div>
-      <div th:class="right_btn">
-        <button th:type="submit" th:class="btn_modify">
+      <div class="right_btn">
+        <button th:type="submit" class="btn_modify">
           <i class="fa-solid fa-pen-to-square fa-xs"></i>수정
         </button>
-        <button th:type="button" th:class="btn_delete">
+        <button th:type="button" class="btn_delete">
           <i class="fa-solid fa-trash-can fa-xs"></i>삭제
         </button>
       </div>
     </div>
-    <div th:class="verify_box">
+    <div class="verify_box">
       <label th:for="password">비밀번호</label>
       <input th:id="password" th:type="password">
-      <span th:class="verify_cancel">
+      <span class="verify_cancel">
         <i class="fa-solid fa-xmark"></i>
       </span>
     </div>
