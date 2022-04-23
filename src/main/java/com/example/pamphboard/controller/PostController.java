@@ -4,12 +4,8 @@ import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostController {
@@ -26,12 +22,6 @@ public class PostController {
     return "/post/save";
   }
 
-  @ResponseBody
-  @PostMapping("/post/save/new")
-  public Long save(@RequestBody PostDto postDto) {
-    return postService.save(postDto);
-  }
-
   @GetMapping("/post/list")
   public String list(Model model) {
     model.addAttribute("foundPosts", postService.findAll());
@@ -44,21 +34,9 @@ public class PostController {
     return "post/read";
   }
 
-  @ResponseBody
-  @PostMapping("/verify/password/")
-  public boolean verifyPassword(long postIdx, String password) {
-    return postService.isPWCorrect(postIdx, password);
-  }
-
   @GetMapping("/post/modify/{postIdx}")
   public String modify(@PathVariable long postIdx, Model model) {
     model.addAttribute("foundPost", postService.findByIdx(postIdx));
     return "post/modify";
-  }
-
-  @ResponseBody
-  @DeleteMapping("/post/delete/{postIdx}")
-  public Long delete(@PathVariable long postIdx) {
-    return postService.deleteById(postIdx);
   }
 }
