@@ -33,13 +33,13 @@ public class PostController {
 
   @GetMapping("/post/list")
   public String list(Model model) {
-    model.addAttribute("foundPosts", postService.findAll());
+    model.addAttribute("posts", postService.findAll());
     return "post/list";
   }
 
   @GetMapping("/post/read/{postIdx}")
   public String read(@PathVariable long postIdx, Model model) {
-    model.addAttribute("foundPost", postService.findByIdx(postIdx));
+    model.addAttribute("post", postService.findByIdx(postIdx));
     return "post/read";
   }
 
@@ -51,7 +51,7 @@ public class PostController {
 
   @GetMapping("/post/modify/{postIdx}")
   public String modify(@PathVariable long postIdx, Model model) {
-    model.addAttribute("foundPost", postService.findByIdx(postIdx));
+    model.addAttribute("post", postService.findByIdx(postIdx));
     return "post/modify";
   }
 }

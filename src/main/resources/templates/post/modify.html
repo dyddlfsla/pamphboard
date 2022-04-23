@@ -6,15 +6,15 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section th:class="section">
-  <form th:class="post_form" th:object="${foundPost}" th:method="post">
+  <form th:class="post_form" th:object="${post}" th:method="post">
     <div th:class="|form_top item|">
       <div th:class="author">
         <label th:for="author">글쓴이</label>
-        <input th:type="text" th:value="${foundPost.author}">
+        <input th:type="text" th:value="${post.author}">
       </div>
       <div th:class="password">
         <label th:for="password">비밀번호</label>
-        <input type="password" th:value="${foundPost.password}" th:maxlength="10">
+        <input type="password" th:value="${post.password}" th:maxlength="10">
       </div>
     </div>
     <div th:class="notice">
@@ -22,10 +22,10 @@
         2) 불건전한 내용 및 초상권이나 저작권을 침해하는 게시물의 경우 법적인 책임을 질 수 있습니다.</p>
     </div>
     <div th:class="|title item|">
-      <input th:type="text" th:value="${foundPost.title}" th:size="80">
+      <input th:type="text" th:value="${post.title}" th:size="80">
     </div>
     <div th:class="|content item|">
-      <textarea th:text="${foundPost.content}" th:rows="30" th:cols="82"></textarea>
+      <textarea th:text="${post.content}" th:rows="30" th:cols="82"></textarea>
     </div>
     <div th:class="btn">
       <button th:type="button" th:class="btn_modify">

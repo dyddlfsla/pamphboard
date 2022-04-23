@@ -18,7 +18,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="post, status : ${foundPosts}">
+      <tr th:each="post, status : ${posts}">
         <td th:text="${status.count}">번호</td>
         <td><a th:text="${post.title}" th:href="@{/post/read/{postIdx}(postIdx=${post.postIdx})}">제목</a></td>
         <td th:text="${post.author}">글쓴이</td>
