@@ -27,7 +27,7 @@ const Read = {
             innerThis.modify();
           }
           if (isPWCorrect && process === 'delete') {
-            //삭제 함수
+            innerThis.delete();
           }
           if (!isPWCorrect) {
             alert('비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
@@ -68,6 +68,18 @@ const Read = {
 
   modify: function() {
     location.href = `/post/modify/${idx}`;
+  },
+
+  delete: function() {
+    $.ajax({
+      type: 'DELETE',
+      url: `/post/delete/${idx}`,
+    }).done(function () {
+      alert(`글이 삭제되었습니다.`);
+      location.href = '/post/list';
+    }).fail(function (error) {
+      alert(`관리자에게 문의하세요. error : ${JSON.stringify(error)}`);
+    })
   }
 }
 
