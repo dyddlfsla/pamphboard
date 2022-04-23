@@ -8,6 +8,7 @@ const Read = {
     });
     $('.btn_update').on('click', function () {
       $('.verify_box').css('visibility', 'visible');
+      $('#password').focus();
       process = 'modify';
     });
     $('.btn_delete').on('click', function () {
