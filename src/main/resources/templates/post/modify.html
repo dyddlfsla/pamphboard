@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout/fragment/common_head :: common_head(~{::link})}">
-  <link th:href="@{/css/post/post_save.css}" th:rel="stylesheet">
+  <link th:href="@{/css/post/post_modify.css}" th:rel="stylesheet">
 </head>
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
@@ -28,8 +28,8 @@
       <textarea th:text="${foundPost.content}" th:rows="30" th:cols="82"></textarea>
     </div>
     <div th:class="btn">
-      <button th:type="button" th:class="btn_update">
-        <i class="fa-solid fa-check fa-xs"></i>확인
+      <button th:type="button" th:class="btn_modify">
+        <i class="fa-solid fa-check fa-xs"></i>수정
       </button>
       <button th:type="button" th:class="btn_cancel">
         <i class="fa-solid fa-xmark fa-xs"></i>취소

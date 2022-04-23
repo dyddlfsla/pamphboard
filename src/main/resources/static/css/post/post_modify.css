@@ -1,0 +1,95 @@
+.section {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+}
+
+.post_form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  width: 800px;
+}
+
+.form_top {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-weight: bold;
+  border-top: 2px solid var(--color-three);
+  border-bottom: 1px solid var(--color-three);
+}
+
+.author input {
+  height: 20px;
+}
+
+.password {
+  margin-left: 115px;
+}
+
+.password input {
+  height: 20px;
+}
+
+.notice p {
+  padding-left: 100px;
+  margin-bottom: 0px;
+  font-size:12px;
+  color: dimgray;
+}
+
+.title {
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.title input {
+  height: 20px;
+}
+
+.content {
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--color-three);
+}
+
+.item {
+  text-align: center;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn {
+  padding: 15px 0;
+  text-align: right;
+  margin-right: 100px;
+}
+
+.btn button {
+  cursor: pointer;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 85px;
+  height: 35px;
+}
+
+.btn button:hover {
+  background-color: var(--color-six);
+}
+
+.btn_modify {
+  background-color: var(--color-three);
+}
+
+.btn_cancel {
+  background-color: var(--color-four);
+}
+
+.btn button i {
+  padding-right: 4px;
+}
