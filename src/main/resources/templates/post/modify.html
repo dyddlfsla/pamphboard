@@ -16,6 +16,7 @@
         <label th:for="password">비밀번호</label>
         <input type="password" value="temporary" maxlength="10" disabled>
       </div>
+      <input type="hidden" th:field="*{postIdx}"/>
     </div>
     <div class="notice">
       <p class="notice_title">
@@ -31,11 +32,11 @@
       <input type="text" th:field="*{title}" size="80">
     </div>
     <div class="content item">
-      <textarea th:text="${post.content}" rows="30" cols="82"></textarea>
+      <textarea id="content" th:text="${post.content}" rows="30" cols="82"></textarea>
     </div>
     <div class="btn">
-      <button type="button" class="btn_modify">
-        <i class="fa-solid fa-check fa-xs"></i>수정
+      <button type="button" class="btn_update">
+        <i class="fa-solid fa-check fa-xs"></i>완료
       </button>
       <button type="button" class="btn_cancel">
         <i class="fa-solid fa-xmark fa-xs"></i>취소
@@ -45,5 +46,6 @@
 </section>
 <footer th:replace="~{layout/fragment/footer :: footer}"></footer>
 <script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
+<script th:src="@{/js/post/post_modify.js}"></script>
 </body>
 </html>
