@@ -15,11 +15,11 @@ public interface PostMapper {
   Long insert(PostDto postDto);
 
   @Select("SELECT * FROM BOARD_POST WHERE post_idx = #{post_idx}")
-  PostDto selectOne(long postIdx);
+  PostDto selectById(long postIdx);
 
   @Select("SELECT * FROM BOARD_POST")
   List<PostDto> selectAll();
 
   @Delete("DELETE FROM BOARD_POST WHERE post_idx = #{post_idx}")
-  Long deleteOne(long postIdx);
+  Long deleteById(long postIdx);
 }
