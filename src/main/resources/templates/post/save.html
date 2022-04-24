@@ -6,15 +6,15 @@
 <body>
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section class="section">
-  <form class="post_form" th:action="@{/post/save/new}" th:object="${PostDto}" th:method="post">
+  <form class="post_form" th:object="${PostDto}">
     <div class="form_top item">
       <div class="author">
-        <label for="author">글쓴이</label>
-        <input type="text" th:field="*{author}" th:placeholder="|이름을 입력하세요.|" th:required>
+        <label th:for="author">글쓴이</label>
+        <input type="text" th:field="*{author}" placeholder="이름을 입력하세요." required>
       </div>
       <div class="password">
-        <label for="password">비밀번호</label>
-        <input type="password" th:field="*{password}" th:placeholder="|비밀번호를 입력하세요.|" maxlength="10" th:required>
+        <label th:for="password">비밀번호</label>
+        <input type="password" th:field="*{password}" placeholder="비밀번호를 입력하세요." maxlength="10" required>
       </div>
     </div>
     <div class="notice">
@@ -22,16 +22,16 @@
         2) 불건전한 내용 및 초상권이나 저작권을 침해하는 게시물의 경우 법적인 책임을 질 수 있습니다.</p>
     </div>
     <div class="title item">
-      <input type="text" th:field="*{title}" size="80" th:placeholder="|제목을 입력하세요.|" th:required>
+      <input type="text" th:field="*{title}" size="80" placeholder="제목을 입력하세요." required>
     </div>
     <div class="content item">
-      <textarea th:field="*{content}" rows="30" cols="82" th:placeholder="|내용을 입력하세요.|" th:required></textarea>
+      <textarea th:field="*{content}" rows="30" cols="82" placeholder="내용을 입력하세요." required></textarea>
     </div>
     <div class="btn">
-      <button th:type="button" class="btn_save">
+      <button type="button" class="btn_save">
         <i class="fa-solid fa-check fa-xs"></i>확인
       </button>
-      <button th:type="button" class="btn_cancel">
+      <button type="button" class="btn_cancel">
         <i class="fa-solid fa-xmark fa-xs"></i>취소
       </button>
     </div>

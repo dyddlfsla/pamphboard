@@ -14,7 +14,7 @@
       <div class="info">
         <span th:text="${post.author}" class="author">아이디</span>
         <span th:text="'| ' + ${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}" class="reg_date">등록일</span>
-        <input th:type="hidden" id="postIdx" th:value="${post.postIdx}"/>
+        <input type="hidden" id="postIdx" th:value="${post.postIdx}"/>
       </div>
     </div>
     <div class="content">
