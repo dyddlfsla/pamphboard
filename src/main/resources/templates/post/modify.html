@@ -10,11 +10,11 @@
     <div class="form_top item">
       <div class="author">
         <label th:for="author">글쓴이</label>
-        <input type="text" th:field="*{author}">
+        <input type="text" th:field="*{author}" disabled>
       </div>
       <div class="password">
         <label th:for="password">비밀번호</label>
-        <input type="password" th:field="*{password}" maxlength="10">
+        <input type="password" value="temporary" maxlength="10" disabled>
       </div>
     </div>
     <div class="notice">
