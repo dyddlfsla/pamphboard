@@ -32,10 +32,19 @@
   height: 20px;
 }
 
-.notice p {
-  padding-left: 100px;
+.notice_title {
+  padding: 0px 110px;
   margin-bottom: 0px;
-  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.notice_content {
+  padding: 0px 105px;
+  margin: 0px;
+}
+
+.notice p {
+  font-size: 11px;
   color: dimgray;
 }
 
