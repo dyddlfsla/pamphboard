@@ -23,7 +23,7 @@ public class PostRestController {
     return postService.save(postDto);
   }
 
-  @PostMapping("/verify/password/")
+  @PostMapping("/verify/password")
   public boolean verifyPassword(long postIdx, String password) {
     return postService.isPWCorrect(postIdx, password);
   }

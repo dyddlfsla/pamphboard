@@ -46,7 +46,7 @@ const Read = {
     };
     $.ajax({
       type: 'POST',
-      url: `/verify/password/`,
+      url: `/verify/password`,
       dataType: 'json',
       data: data,
       async: false,
