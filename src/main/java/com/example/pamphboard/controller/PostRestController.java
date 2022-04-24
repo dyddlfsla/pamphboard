@@ -5,6 +5,7 @@ import com.example.pamphboard.service.PostService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,11 @@ public class PostRestController {
   @PostMapping("/verify/password/")
   public boolean verifyPassword(long postIdx, String password) {
     return postService.isPWCorrect(postIdx, password);
+  }
+
+  @PutMapping("/post/update/")
+  public Long update(@RequestBody PostDto postDto) {
+    return postService.updateById(postDto);
   }
 
   @DeleteMapping("/post/delete/{postIdx}")

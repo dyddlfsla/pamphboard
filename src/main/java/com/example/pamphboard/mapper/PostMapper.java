@@ -22,4 +22,7 @@ public interface PostMapper {
 
   @Delete("DELETE FROM BOARD_POST WHERE post_idx = #{post_idx}")
   Long deleteById(long postIdx);
+
+  @Update("UPDATE BOARD_POST SET title = #{title}, content = #{content} WHERE post_idx = #{postIdx}")
+  Long updateById(PostDto postDto);
 }

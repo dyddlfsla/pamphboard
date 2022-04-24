@@ -41,4 +41,8 @@ public class PostService {
   public Long deleteById(long postIdx) {
     return postDao.deleteById(postIdx);
   }
+
+  public Long updateById(PostDto postDto) {
+    return postDao.updateById(postDto);
+  }
 }

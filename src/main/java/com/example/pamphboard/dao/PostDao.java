@@ -29,4 +29,8 @@ public class PostDao {
   public Long deleteById(long postIdx) {
     return postMapper.deleteById(postIdx);
   }
+
+  public Long updateById(PostDto postDto) {
+    return postMapper.updateById(postDto);
+  }
 }
