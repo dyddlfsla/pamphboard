@@ -23,7 +23,7 @@ const create = {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(formData),
     }).done(function () {
-      alert('게시글이 등록되었습니다.');
+      alert('글이 등록되었습니다.');
       window.location.href = '/post/list';
     }).fail(function (error) {
       alert(`관리자에게 문의하세요. error : ${JSON.stringify(error)}`);

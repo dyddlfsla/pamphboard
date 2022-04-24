@@ -17,6 +17,10 @@
   border-bottom: 1px solid var(--color-three);
 }
 
+.author {
+  color:#333;
+}
+
 .info {
   display: flex;
   justify-content: space-between;
@@ -67,14 +71,16 @@
 
 .verify_box {
   visibility: hidden;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  width: 230px;
+  margin-left: 550px;
+  border: 2px solid var(--color-two);
   padding: 15px 5px;
   display: flex;
   justify-content: flex-end;
 }
 
 .verify_box label {
+  font-size: 14px;
   font-weight: bold;
   margin-right: 10px;
 }
