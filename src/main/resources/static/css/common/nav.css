@@ -44,11 +44,6 @@ a {
   font-size: 24px;
 }
 
-.navbar_menu li:hover {
-  background-color: var(--color-seven);
-  border-radius: 4px;
-}
-
 .navbar_link_icons {
   list-style: none;
   color: white;
@@ -58,4 +53,9 @@ a {
 .navbar_link_icons li {
   padding: 10px 14px;
   font-weight: bold;
+}
+
+.active {
+  background-color: var(--color-seven);
+  border-radius: 4px;
 }
