@@ -34,6 +34,10 @@ td, th {
   font-size: 14px;
 }
 
+.row:hover {
+  background-color: #f3f3f3;
+}
+
 td > a {
   color: #000;
 }
