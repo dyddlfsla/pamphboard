@@ -45,7 +45,7 @@
   </article>
 </section>
 <footer th:replace="~{layout/fragment/footer :: footer}"></footer>
-<script th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
+<th:block th:replace="~{layout/fragment/common_js.html :: common_js(~{::script})}"></th:block>
 <script th:src="@{/js/post/post_read.js}"></script>
 </body>
 </html>
