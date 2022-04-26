@@ -79,3 +79,18 @@ tr:first-child td {
 .board_button button i {
   padding-right: 4px;
 }
+
+.board_pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.board_pagination span, .board_pagination a {
+  padding: 0px 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.board_pagination a {
+  text-decoration: none;
+}
