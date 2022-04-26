@@ -9,7 +9,7 @@
 }
 
 table {
-  width: 1000px;
+  width: 900px;
   border-collapse: collapse;
 }
 
@@ -31,11 +31,16 @@ td, th {
   border-bottom: 1px solid lightgray;
   text-align: center;
   padding: 5px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .row:hover {
   background-color: #f3f3f3;
+}
+
+tr td:nth-child(2) {
+  text-align: left;
+  font-size: 14px;
 }
 
 td > a {
@@ -50,10 +55,6 @@ td > a:hover {
   text-decoration: underline;
 }
 
-tr:first-child td {
-  border-top: none;
-}
-
 .board_button {
   margin-top: 10px;
   display: flex;
@@ -65,15 +66,11 @@ tr:first-child td {
   border-radius: 5px;
   letter-spacing: 3px;
   border: none;
-  background-color: var(--color-four);
+  background-color: var(--color-two);
   color: white;
   font-size: 14px;
   width: 85px;
   height: 35px;
-}
-
-.board_button button:hover {
-  background-color: var(--color-six);
 }
 
 .board_button button i {

@@ -34,7 +34,6 @@
 
 .notice_title {
   padding: 0px 110px;
-  margin-bottom: 0px;
   margin-bottom: 5px;
 }
 
@@ -87,12 +86,8 @@ textarea {
   height: 35px;
 }
 
-.btn button:hover {
-  background-color: var(--color-six);
-}
-
 .btn_save {
-  background-color: var(--color-three);
+  background-color: var(--color-two);
 }
 
 .btn_cancel {

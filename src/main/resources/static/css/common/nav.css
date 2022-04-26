@@ -8,8 +8,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-one);
-  padding-right: 30px;
-  padding-left: 30px;
+  padding: 0px 100px;
   border-bottom: 2px solid #000;;
 }
 

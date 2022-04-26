@@ -86,16 +86,12 @@ textarea {
   height: 35px;
 }
 
-.btn button:hover {
-  background-color: var(--color-six);
-}
-
 .btn_update {
-  background-color: var(--color-three);
+  background-color: var(--color-two);
 }
 
 .btn_cancel {
-  background-color: var(--color-four);
+  background-color: var(--color-six);
 }
 
 .btn button i {
