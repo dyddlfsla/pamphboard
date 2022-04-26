@@ -1,0 +1,27 @@
+:root {
+  --color-one: #7F1F45;
+  --color-two: #6E2D5B;
+  --color-three: #573967;
+  --color-four: #404169;
+  --color-five: #314663;
+  --color-six: #2F4858;
+  --color-seven: #0c1b33;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/static/assets/googlefonts/fonts/SourceSansPro-Regular.ttf") format("ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro";
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
