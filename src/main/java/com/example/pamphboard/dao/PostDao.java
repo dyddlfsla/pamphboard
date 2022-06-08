@@ -33,4 +33,8 @@ public class PostDao {
   public Long updateById(PostDto postDto) {
     return postMapper.updateById(postDto);
   }
+
+  public int getTotalOfPost() {
+    return postMapper.getTotalOfPost();
+  }
 }

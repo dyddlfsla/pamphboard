@@ -26,4 +26,7 @@ public interface PostMapper {
 
   @Update("UPDATE BOARD_POST SET title = #{title}, content = #{content} WHERE post_idx = #{postIdx}")
   Long updateById(PostDto postDto);
+
+  @Select("SELECT COUNT(*) FROM BOARD_POST")
+  int getTotalOfPost();
 }

@@ -2,6 +2,7 @@ package com.example.pamphboard.service;
 
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
+import com.example.pamphboard.dto.PostPage;
 import java.util.List;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,5 +45,10 @@ public class PostService {
 
   public Long updateById(PostDto postDto) {
     return postDao.updateById(postDto);
+  }
+
+  public PostPage getPostPage(int currentPage) {
+    int totalOfPost = postDao.getTotalOfPost();
+    return new PostPage(totalOfPost, currentPage, 20, 2);
   }
 }

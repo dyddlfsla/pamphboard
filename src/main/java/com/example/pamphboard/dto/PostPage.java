@@ -9,7 +9,7 @@ public class PostPage {
   private int totalOfPage;
   private int currentPage;
 
-  PostPage(int totalOfPost, int currentPage, int pageSize, int pageMoveBtn) {
+  public PostPage(int totalOfPost, int currentPage, int pageSize, int pageMoveBtn) {
     this.currentPage = currentPage;
     totalOfPage = totalOfPost / pageSize;
     if (totalOfPost % pageSize > 0) {
