@@ -48,7 +48,10 @@ public class PostService {
   }
 
   public PostPage getPostPage(int currentPage) {
-    int totalOfPost = postDao.getTotalOfPost();
-    return new PostPage(totalOfPost, currentPage, 20, 2);
+    return new PostPage(getTotalOfPost(), currentPage, 20, 2);
+  }
+
+  private int getTotalOfPost() {
+    return postDao.getTotalOfPost();
   }
 }
