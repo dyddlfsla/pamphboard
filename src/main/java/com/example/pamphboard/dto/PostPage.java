@@ -9,11 +9,25 @@ public class PostPage {
   private int totalOfPage;
   private int currentPage;
 
-  PostPage(int totalOfPost, int currentPage, int pageSize, int totalPageBtn) {
+  PostPage(int totalOfPost, int currentPage, int pageSize, int pageMoveBtn) {
     this.currentPage = currentPage;
     totalOfPage = totalOfPost / pageSize;
     if (totalOfPost % pageSize > 0) {
       totalOfPage++;
+    }
+
+    min = ((currentPage - 1) / totalOfPost) * totalOfPost + 1;
+    max = min + pageMoveBtn - 1;
+
+    if (max > totalOfPage) {
+      max = totalOfPage;
+    }
+
+    prevPage = min - 1;
+    nextPage = max + 1;
+
+    if (nextPage > totalOfPage) {
+      nextPage = totalOfPage;
     }
   }
 
