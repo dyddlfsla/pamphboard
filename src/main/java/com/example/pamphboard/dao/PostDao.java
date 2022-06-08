@@ -3,6 +3,7 @@ package com.example.pamphboard.dao;
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.mapper.PostMapper;
 import java.util.List;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -18,8 +19,8 @@ public class PostDao {
     return postMapper.insert(postDto);
   }
 
-  public List<PostDto> findAll() {
-    return postMapper.selectAll();
+  public List<PostDto> findAll(RowBounds rowBounds) {
+    return postMapper.selectAll(rowBounds);
   }
 
   public PostDto findByIdx(long postIdx) {

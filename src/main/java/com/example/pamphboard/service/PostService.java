@@ -4,6 +4,7 @@ import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.dto.PostPage;
 import java.util.List;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +23,10 @@ public class PostService {
     return postDao.save(encryptPost(postDto));
   }
 
-  public List<PostDto> findAll() {
-    return postDao.findAll();
+  public List<PostDto> findAll(int currentPage) {
+    int startIdx = (currentPage - 1) * 15;
+    RowBounds rowBounds = new RowBounds(startIdx, 15);
+    return postDao.findAll(rowBounds);
   }
 
   public PostDto findByIdx(long postIdx) {
@@ -48,7 +51,7 @@ public class PostService {
   }
 
   public PostPage getPostPage(int currentPage) {
-    return new PostPage(getTotalOfPost(), currentPage, 20, 2);
+    return new PostPage(getTotalOfPost(), currentPage, 15, 2);
   }
 
   private int getTotalOfPost() {
