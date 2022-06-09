@@ -51,7 +51,7 @@ public class PostService {
   }
 
   public PostPage getPostPage(int currentPage) {
-    return new PostPage(getTotalOfPost(), currentPage, 15, 2);
+    return new PostPage(getTotalOfPost(), currentPage, 15, 5);
   }
 
   private int getTotalOfPost() {

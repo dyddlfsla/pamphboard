@@ -2,41 +2,41 @@ package com.example.pamphboard.dto;
 
 public class PostPage {
 
-  private int min;
-  private int max;
+  private int minPage;
+  private int maxPage;
   private int prevPage;
   private int nextPage;
   private int totalOfPage;
   private int currentPage;
 
-  public PostPage(int totalOfPost, int currentPage, int pageSize, int pageMoveBtn) {
+  public PostPage(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
     this.currentPage = currentPage;
     totalOfPage = totalOfPost / pageSize;
     if (totalOfPost % pageSize > 0) {
       totalOfPage++;
     }
 
-    min = ((currentPage - 1) / totalOfPost) * totalOfPost + 1;
-    max = min + pageMoveBtn - 1;
+    minPage = ((currentPage - 1) / numberOfPageBtn) * numberOfPageBtn + 1;
+    maxPage = minPage + numberOfPageBtn - 1;
 
-    if (max > totalOfPage) {
-      max = totalOfPage;
+    if (maxPage > totalOfPage) {
+      maxPage = totalOfPage;
     }
 
-    prevPage = min - 1;
-    nextPage = max + 1;
+    prevPage = minPage - 1;
+    nextPage = maxPage + 1;
 
     if (nextPage > totalOfPage) {
       nextPage = totalOfPage;
     }
   }
 
-  public int getMin() {
-    return min;
+  public int getMinPage() {
+    return minPage;
   }
 
-  public int getMax() {
-    return max;
+  public int getMaxPage() {
+    return maxPage;
   }
 
   public int getPrevPage() {
