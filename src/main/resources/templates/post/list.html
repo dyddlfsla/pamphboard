@@ -33,10 +33,9 @@
     </div>
     <div class="board_pagination">
       <span class="previous"><a th:href="@{#}">이전</a></span>
-      <a class="page_number" th:href="@{#}">1</a>
-      <a class="page_number" th:href="@{#}">2</a>
-      <a class="page_number" th:href="@{#}">3</a>
-      <a class="page_number" th:href="@{#}">4</a>
+      <th:block th:each="numberOfPage : ${#numbers.sequence(pagination.minPage, pagination.maxPage)}">
+        <a th:href="@{/post/list(currentPage=${numberOfPage})}" th:text="${numberOfPage}">페이지 번호</a>
+      </th:block>
       <span class="next"><a th:href="@{#}">다음</a></span>
     </div>
   </article>
