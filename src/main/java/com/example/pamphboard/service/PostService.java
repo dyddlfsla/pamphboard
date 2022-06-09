@@ -5,14 +5,23 @@ import com.example.pamphboard.dto.PostDto;
 import com.example.pamphboard.dto.PostPagination;
 import java.util.List;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
+@PropertySource("classpath:/pagination.properties")
 public class PostService {
 
   private final PostDao postDao;
   private final BCryptPasswordEncoder passwordEncoder;
+
+  @Value("${pageSize}")
+  private int pageSize;
+
+  @Value("${numberOfPageBtn}")
+  private int numberOfPageBtn;
 
   PostService(PostDao postDao, BCryptPasswordEncoder passwordEncoder) {
     this.postDao = postDao;
@@ -24,8 +33,7 @@ public class PostService {
   }
 
   public List<PostDto> findAll(int currentPage) {
-    int startIdx = (currentPage - 1) * 15;
-    RowBounds rowBounds = new RowBounds(startIdx, 15);
+    RowBounds rowBounds = new RowBounds((currentPage - 1) * pageSize, pageSize);
     return postDao.findAll(rowBounds);
   }
 
@@ -51,7 +59,7 @@ public class PostService {
   }
 
   public PostPagination getPostPagination(int currentPage) {
-    return new PostPagination(getTotalOfPost(), currentPage, 15, 5);
+    return new PostPagination(getTotalOfPost(), currentPage, pageSize, numberOfPageBtn);
   }
 
   private int getTotalOfPost() {
