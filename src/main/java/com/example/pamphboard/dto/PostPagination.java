@@ -1,6 +1,6 @@
 package com.example.pamphboard.dto;
 
-public class PostPage {
+public class PostPagination {
 
   private int minPage;
   private int maxPage;
@@ -9,7 +9,7 @@ public class PostPage {
   private int totalOfPage;
   private int currentPage;
 
-  public PostPage(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
+  public PostPagination(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
     this.currentPage = currentPage;
     totalOfPage = totalOfPost / pageSize;
     if (totalOfPost % pageSize > 0) {

@@ -2,7 +2,7 @@ package com.example.pamphboard.service;
 
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
-import com.example.pamphboard.dto.PostPage;
+import com.example.pamphboard.dto.PostPagination;
 import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -50,8 +50,8 @@ public class PostService {
     return postDao.updateById(postDto);
   }
 
-  public PostPage getPostPage(int currentPage) {
-    return new PostPage(getTotalOfPost(), currentPage, 15, 5);
+  public PostPagination getPostPagination(int currentPage) {
+    return new PostPagination(getTotalOfPost(), currentPage, 15, 5);
   }
 
   private int getTotalOfPost() {

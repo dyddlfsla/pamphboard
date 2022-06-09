@@ -26,7 +26,7 @@ public class PostController {
   @GetMapping("/post/list")
   public String list(@RequestParam(value = "currentPage", defaultValue = "1") int currentPage, Model model) {
     model.addAttribute("posts", postService.findAll(currentPage));
-    model.addAttribute("page", postService.getPostPage(currentPage));
+    model.addAttribute("pagination", postService.getPostPagination(currentPage));
     return "post/list";
   }
 
