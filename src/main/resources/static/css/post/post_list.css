@@ -102,10 +102,10 @@ td > a:hover {
 
 .board_pagination span, .board_pagination a {
   padding: 0px 7px;
-  font-size: 14px;
   font-weight: bold;
 }
 
-.board_pagination a {
-  text-decoration: none;
+.pageOn, .pageOn:visited {
+  color: var(--color-two);
+  text-decoration: underline;
 }
