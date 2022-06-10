@@ -7,25 +7,27 @@
 <header th:replace="~{layout/fragment/header :: header}"></header>
 <section class="section">
   <article class="section_board">
-    <table>
-      <caption>자유 게시판</caption>
-      <thead>
-      <tr>
-        <th class="table_no">번호</th>
-        <th class="table_title">제목</th>
-        <th class="table_author">글쓴이</th>
-        <th class="table_regDate">등록일</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="row" th:each="post, status : ${posts}">
-        <td th:text="${status.count}">번호</td>
-        <td><a th:text="${post.title}" th:href="@{/post/read/{postIdx}(postIdx=${post.postIdx})}">제목</a></td>
-        <td th:text="${post.author}">글쓴이</td>
-        <td th:text="${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}">등록일</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="board_list">
+      <table>
+        <caption>자유 게시판</caption>
+        <thead>
+        <tr>
+          <th class="table_no">번호</th>
+          <th class="table_title">제목</th>
+          <th class="table_author">글쓴이</th>
+          <th class="table_regDate">등록일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row" th:each="post, status : ${posts}">
+          <td th:text="${status.count}">번호</td>
+          <td><a th:text="${post.title}" th:href="@{/post/read/{postIdx}(postIdx=${post.postIdx})}">제목</a></td>
+          <td th:text="${post.author}">글쓴이</td>
+          <td th:text="${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}">등록일</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="board_button">
         <button type="button" th:onclick="|location.href='@{/post/save}'|">
           <i class="fa-solid fa-pencil fa-xs"></i>글쓰기
