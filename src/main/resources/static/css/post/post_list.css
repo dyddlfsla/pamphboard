@@ -9,7 +9,7 @@
 }
 
 table {
-  width: 900px;
+  width: 800px;
   border-collapse: collapse;
 }
 
@@ -27,6 +27,22 @@ thead {
   color: #333;
 }
 
+.table_no {
+  width: 7%;
+}
+
+.table_title {
+  width: 68%;
+}
+
+.table_author {
+  width: 10%;
+}
+
+.table_regDate {
+  width: 15%;
+}
+
 td, th {
   border-bottom: 1px solid lightgray;
   text-align: center;
@@ -42,6 +58,8 @@ tr td:nth-child(2) {
   text-align: left;
   font-size: 14px;
 }
+
+
 
 td > a {
   color: #000;
