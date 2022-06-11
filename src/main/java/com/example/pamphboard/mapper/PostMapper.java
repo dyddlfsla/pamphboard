@@ -19,7 +19,7 @@ public interface PostMapper {
   @Select("SELECT * FROM BOARD_POST WHERE post_idx = #{postIdx}")
   PostDto selectById(long postIdx);
 
-  @Select("SELECT * FROM BOARD_POST")
+  @Select("SELECT * FROM BOARD_POST ORDER BY reg_date DESC")
   List<PostDto> selectAll(RowBounds rowBounds);
 
   @Delete("DELETE FROM BOARD_POST WHERE post_idx = #{postIdx}")
