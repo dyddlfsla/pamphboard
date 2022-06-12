@@ -18,7 +18,7 @@ const create = {
     };
     $.ajax({
       type: 'POST',
-      url: '/post/save/new',
+      url: '/api/pamphboard/post/save',
       dataType: 'json',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(formData),

@@ -46,7 +46,7 @@ const Read = {
     };
     $.ajax({
       type: 'POST',
-      url: `/verify/password`,
+      url: `/api/verify/post/password`,
       dataType: 'json',
       data: data,
       async: false,
@@ -80,7 +80,7 @@ const Read = {
     if(confirm(`${this.comment()}`)) {
       $.ajax({
         type: 'DELETE',
-        url: `/post/delete/${idx}`,
+        url: `/api/pamphboard/post/delete/${idx}`,
       }).done(function () {
         alert(`글이 삭제되었습니다.`);
         location.href = '/post/list';
