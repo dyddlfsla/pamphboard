@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/pamphboard/post")
 public class PostApiController {
 
   private final PostService postService;
@@ -19,27 +21,27 @@ public class PostApiController {
     this.postService = postService;
   }
 
-  @GetMapping("/api/pamphboard/post/read/{postIdx}")
+  @GetMapping("/{postIdx}")
   public PostDto read(@PathVariable long postIdx) {
     return postService.findByIdx(postIdx);
   }
 
-  @PostMapping("/api/pamphboard/post/save")
+  @PostMapping
   public Long save(@RequestBody PostDto postDto) {
     return postService.save(postDto);
   }
 
-  @PutMapping("/api/pamphboard/post/update/")
+  @PutMapping
   public Long update(@RequestBody PostDto postDto) {
     return postService.updateById(postDto);
   }
 
-  @DeleteMapping("/api/pamphboard/post/delete/{postIdx}")
+  @DeleteMapping("/{postIdx}")
   public Long delete(@PathVariable long postIdx) {
     return postService.deleteById(postIdx);
   }
 
-  @PostMapping("/api/verify/post/password")
+  @PostMapping("/verify/password")
   public boolean verifyPassword(long postIdx, String password) {
     return postService.isPWCorrect(postIdx, password);
   }
