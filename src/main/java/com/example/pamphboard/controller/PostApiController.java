@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PostRestController {
+public class PostApiController {
 
   private final PostService postService;
 
-  PostRestController(PostService postService) {
+  PostApiController(PostService postService) {
     this.postService = postService;
   }
 

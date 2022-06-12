@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class PostController {
+public class PostIndexController {
 
   private final PostService postService;
 
-  PostController(PostService postService) {
+  PostIndexController(PostService postService) {
     this.postService = postService;
   }
 
