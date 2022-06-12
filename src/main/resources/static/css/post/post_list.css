@@ -9,6 +9,7 @@
 }
 
 table {
+  table-layout: fixed;
   width: 800px;
   border-collapse: collapse;
 }
@@ -55,8 +56,17 @@ td, th {
 }
 
 tr td:nth-child(2) {
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
   text-align: left;
   font-size: 14px;
+}
+
+tr td:nth-child(3) {
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
 }
 
 td > a {
