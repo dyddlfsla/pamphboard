@@ -71,10 +71,6 @@ td > a:hover {
   text-decoration: underline;
 }
 
-.board_list {
-  height: 516px;
-}
-
 .board_button {
   margin-top: 10px;
   display: flex;
