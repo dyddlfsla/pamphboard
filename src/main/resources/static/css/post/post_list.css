@@ -103,6 +103,7 @@ td > a:hover {
 }
 
 .board_pagination span, .board_pagination a {
+  color: #000;
   padding: 0px 7px;
   font-weight: bold;
 }
