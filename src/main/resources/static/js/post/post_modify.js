@@ -17,7 +17,7 @@ const Modify = {
     };
     $.ajax({
       type: 'PUT',
-      url: `/api/pamphboard/post/update/`,
+      url: `/api/pamphboard/post`,
       dataType: 'json',
       contentType: 'application/json; utf-8',
       data: JSON.stringify(updateData),
