@@ -1,6 +1,6 @@
-package com.example.pamphboard.dto;
+package com.example.pamphboard.util;
 
-public class PostPagination {
+public class Pagination {
 
   private int minPage;
   private int maxPage;
@@ -9,7 +9,7 @@ public class PostPagination {
   private int totalOfPage;
   private int currentPage;
 
-  public PostPagination(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
+  public Pagination(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
     this.currentPage = currentPage;
     totalOfPage = totalOfPost / pageSize;
     if (totalOfPost % pageSize > 0) {
@@ -23,8 +23,12 @@ public class PostPagination {
       maxPage = totalOfPage;
     }
 
-    prevPage = minPage - 1;
-    nextPage = maxPage + 1;
+    prevPage = currentPage - 1;
+    if (prevPage == 0) {
+      prevPage = 1;
+    }
+
+    nextPage = currentPage + 1;
 
     if (nextPage > totalOfPage) {
       nextPage = totalOfPage;
