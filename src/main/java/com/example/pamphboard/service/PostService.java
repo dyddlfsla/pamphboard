@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@PropertySource("classpath:/pagination.properties")
+@PropertySource("classpath:/properties/pagination.properties")
 public class PostService {
 
   private final PostDao postDao;
