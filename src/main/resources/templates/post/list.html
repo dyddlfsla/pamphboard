@@ -34,11 +34,21 @@
         </button>
     </div>
     <div class="board_pagination">
-      <a th:href="@{/post/list(currenPage=${pagination.prevPage})}">이전</a>
+      <a th:href="@{/post/list(currentPage=1)}">
+        <i class="fa-solid fa-angles-left"></i>
+      </a>
+      <a th:href="@{/post/list(currentPage=${pagination.prevPage})}">
+        <i class="fa-solid fa-angle-left"></i>
+      </a>
       <th:block th:each="numberOfPage : ${#numbers.sequence(pagination.minPage, pagination.maxPage)}">
         <a th:href="@{/post/list(currentPage=${numberOfPage})}" th:text="${numberOfPage}" th:class="((${numberOfPage} == ${pagination.currentPage})? 'pageOn' : 'pageOff')">페이지 번호</a>
       </th:block>
-      <a th:href="@{/post/list(currentPage=${pagination.nextPage})}">다음</a>
+      <a th:href="@{/post/list(currentPage=${pagination.nextPage})}">
+        <i class="fa-solid fa-angle-right"></i>
+      </a>
+      <a th:href="@{/post/list(currentPage=${pagination.totalOfPage})}">
+        <i class="fa-solid fa-angles-right"></i>
+      </a>
     </div>
   </article>
 </section>

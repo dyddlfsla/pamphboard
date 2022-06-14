@@ -23,8 +23,12 @@ public class PostPagination {
       maxPage = totalOfPage;
     }
 
-    prevPage = minPage - 1;
-    nextPage = maxPage + 1;
+    prevPage = currentPage - 1;
+    if (prevPage == 0) {
+      prevPage = 1;
+    }
+
+    nextPage = currentPage + 1;
 
     if (nextPage > totalOfPage) {
       nextPage = totalOfPage;
