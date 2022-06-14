@@ -20,7 +20,7 @@
         </thead>
         <tbody>
         <tr class="row" th:each="post, status : ${posts}">
-          <td th:text="${post.postIdx}">번호</td>
+          <td th:text="${pagination.totalOfObject} - ((${pagination.currentPage} - 1) * 15) - ${status.index}">번호</td>
           <td><a th:text="${post.title}" th:href="@{/post/read/{postIdx}(postIdx=${post.postIdx})}">제목</a></td>
           <td th:text="${post.author}">글쓴이</td>
           <td th:text="${#temporals.format(post.regDate, 'yy-MM-dd HH:mm')}">등록일</td>
