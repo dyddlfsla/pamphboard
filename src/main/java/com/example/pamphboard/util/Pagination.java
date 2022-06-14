@@ -1,4 +1,4 @@
-package com.example.pamphboard.dto;
+package com.example.pamphboard.util;
 
 public class Pagination {
 

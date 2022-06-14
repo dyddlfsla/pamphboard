@@ -2,7 +2,7 @@ package com.example.pamphboard.service;
 
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
-import com.example.pamphboard.dto.Pagination;
+import com.example.pamphboard.util.Pagination;
 import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Value;
