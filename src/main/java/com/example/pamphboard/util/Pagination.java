@@ -8,11 +8,13 @@ public class Pagination {
   private int nextPage;
   private int totalOfPage;
   private int currentPage;
+  private int totalOfObject;
 
-  public Pagination(int totalOfPost, int currentPage, int pageSize, int numberOfPageBtn) {
+  public Pagination(int totalOfObject, int currentPage, int pageSize, int numberOfPageBtn) {
+    this.totalOfObject = totalOfObject;
     this.currentPage = currentPage;
-    totalOfPage = totalOfPost / pageSize;
-    if (totalOfPost % pageSize > 0) {
+    totalOfPage = totalOfObject / pageSize;
+    if (totalOfObject % pageSize > 0) {
       totalOfPage++;
     }
 
@@ -57,5 +59,9 @@ public class Pagination {
 
   public int getCurrentPage() {
     return currentPage;
+  }
+
+  public int getTotalOfObject() {
+    return totalOfObject;
   }
 }
