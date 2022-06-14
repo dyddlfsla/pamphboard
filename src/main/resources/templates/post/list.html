@@ -34,11 +34,11 @@
         </button>
     </div>
     <div class="board_pagination">
-      <span class="previous"><a th:href="@{#}">이전</a></span>
+      <span class="previous"><a th:href="@{/post/list(currenPage=${pagination.prevPage})}">이전</a></span>
       <th:block th:each="numberOfPage : ${#numbers.sequence(pagination.minPage, pagination.maxPage)}">
         <a th:href="@{/post/list(currentPage=${numberOfPage})}" th:text="${numberOfPage}" th:class="((${numberOfPage} == ${pagination.currentPage})? 'pageOn' : 'pageOff')">페이지 번호</a>
       </th:block>
-      <span class="next"><a th:href="@{#}">다음</a></span>
+      <span class="next"><a th:href="@{/post/list(currentPage=${pagination.nextPage})}">다음</a></span>
     </div>
   </article>
 </section>
