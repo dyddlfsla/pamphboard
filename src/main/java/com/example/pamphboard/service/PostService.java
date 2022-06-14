@@ -2,7 +2,7 @@ package com.example.pamphboard.service;
 
 import com.example.pamphboard.dao.PostDao;
 import com.example.pamphboard.dto.PostDto;
-import com.example.pamphboard.dto.PostPagination;
+import com.example.pamphboard.util.Pagination;
 import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@PropertySource("classpath:/pagination.properties")
+@PropertySource("classpath:/properties/pagination.properties")
 public class PostService {
 
   private final PostDao postDao;
@@ -58,8 +58,8 @@ public class PostService {
     return postDao.updateById(postDto);
   }
 
-  public PostPagination getPostPagination(int currentPage) {
-    return new PostPagination(getTotalOfPost(), currentPage, pageSize, numberOfPageBtn);
+  public Pagination getPostPagination(int currentPage) {
+    return new Pagination(getTotalOfPost(), currentPage, pageSize, numberOfPageBtn);
   }
 
   private int getTotalOfPost() {
