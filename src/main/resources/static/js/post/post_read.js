@@ -1,7 +1,7 @@
 let process = 'none';
 const idx = $('#postIdx').val();
 const password = $('#password');
-const Read = {
+const readPost = {
   init: function () {
     let innerThis = this;
     let isPWCorrect;
@@ -91,4 +91,4 @@ const Read = {
   }
 }
 
-Read.init();
+readPost.init();

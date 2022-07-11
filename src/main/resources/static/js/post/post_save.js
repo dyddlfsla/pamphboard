@@ -1,4 +1,4 @@
-const create = {
+const createPost = {
   init: function () {
     let innerThis = this;
     $('.btn_save').on('click', function () {
@@ -35,4 +35,4 @@ const create = {
   }
 };
 
-create.init();
+createPost.init();

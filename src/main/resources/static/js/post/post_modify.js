@@ -1,4 +1,4 @@
-const Modify = {
+const modifyPost = {
   init: function () {
     let innerThis = this;
     $('.btn_update').on('click', function() {
@@ -34,7 +34,7 @@ const Modify = {
   }
 }
 
-Modify.init();
+modifyPost.init();
 
 
 
